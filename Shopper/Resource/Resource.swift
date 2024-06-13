@@ -30,4 +30,26 @@ enum Resource {
         static let lightGray = #colorLiteral(red: 0.8407003284, green: 0.8407003284, blue: 0.8407003284, alpha: 1)
         static let white = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
+    
+    enum Image {
+        enum ImageSize {
+            case big
+            case selected
+            case unSelected
+        }
+        
+        enum ImageStyle {
+            static let image0 = UIImage(named: "profile_0")
+            static let image1 = UIImage(named: "profile_1")
+            static let image2 = UIImage(named: "profile_2")
+            static let image3 = UIImage(named: "profile_3")
+            static let image4 = UIImage(named: "profile_4")
+            static let image5 = UIImage(named: "profile_5")
+            static let image6 = UIImage(named: "profile_6")
+            static let image7 = UIImage(named: "profile_7")
+            static let image8 = UIImage(named: "profile_8")
+            static let image9 = UIImage(named: "profile_9")
+            static let image10 = UIImage(named: "profile_10")
+        }
+    }
 }

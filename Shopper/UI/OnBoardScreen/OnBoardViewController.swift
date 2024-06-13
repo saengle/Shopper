@@ -25,6 +25,7 @@ class OnBoardViewController: UIViewController {
     }
     
     @objc func startButtonClicked() {
-        print("안녕디지몬")
+        print(#function)
+        navigationController?.pushViewController(SetProfileViewController(), animated: true)
     }
 }
