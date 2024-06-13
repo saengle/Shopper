@@ -9,6 +9,19 @@ import UIKit
 
 class OnBoardView: UIView {
     
+    let MainTitleLabel = {
+        let lb = UILabel()
+        return lb
+    }()
+    let MainImageLabel = {
+        let iv = UIImageView()
+        return iv
+    }()
+    let StartButton = {
+        let bt = UIButton()
+        return bt
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
