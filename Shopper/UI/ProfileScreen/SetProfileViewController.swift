@@ -9,7 +9,7 @@ import UIKit
 
 class SetProfileViewController: UIViewController {
     
-    let profileView = ProfileView()
+    let profileView = SetEditProfileView()
     
     override func loadView() {
         view = profileView
@@ -17,5 +17,7 @@ class SetProfileViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        navigationItem.title = "PROFILE SETTING"
+        navigationController?.navigationBar.tintColor = .black
     }
 }

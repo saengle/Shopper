@@ -9,7 +9,7 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
     
-    let profileView = ProfileView()
+    let profileView = SetEditProfileView()
     
     override func loadView() {
         view = profileView

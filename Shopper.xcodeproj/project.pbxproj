@@ -24,7 +24,7 @@
 		8E86E26D2C1B1506009FE3AB /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E26C2C1B1506009FE3AB /* Buttons.swift */; };
 		8E86E2702C1B31F5009FE3AB /* SetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E26F2C1B31F5009FE3AB /* SetProfileViewController.swift */; };
 		8E86E2722C1B320C009FE3AB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2712C1B320C009FE3AB /* EditProfileViewController.swift */; };
-		8E86E2742C1B3214009FE3AB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2732C1B3214009FE3AB /* ProfileView.swift */; };
+		8E86E2742C1B3214009FE3AB /* SetEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */; };
 		8E86E2762C1B3315009FE3AB /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2752C1B3315009FE3AB /* ProfileImageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 		8E86E26C2C1B1506009FE3AB /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		8E86E26F2C1B31F5009FE3AB /* SetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileViewController.swift; sourceTree = "<group>"; };
 		8E86E2712C1B320C009FE3AB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		8E86E2732C1B3214009FE3AB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfileView.swift; sourceTree = "<group>"; };
 		8E86E2752C1B3315009FE3AB /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,7 +136,7 @@
 			children = (
 				8E86E26F2C1B31F5009FE3AB /* SetProfileViewController.swift */,
 				8E86E2712C1B320C009FE3AB /* EditProfileViewController.swift */,
-				8E86E2732C1B3214009FE3AB /* ProfileView.swift */,
+				8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */,
 			);
 			path = ProfileScreen;
 			sourceTree = "<group>";
@@ -228,7 +228,7 @@
 			files = (
 				8E86E2412C1AF1EE009FE3AB /* ViewController.swift in Sources */,
 				8E86E2582C1B0F18009FE3AB /* OnBoardView.swift in Sources */,
-				8E86E2742C1B3214009FE3AB /* ProfileView.swift in Sources */,
+				8E86E2742C1B3214009FE3AB /* SetEditProfileView.swift in Sources */,
 				8E86E2542C1B0B86009FE3AB /* Resource.swift in Sources */,
 				8E86E23D2C1AF1EE009FE3AB /* AppDelegate.swift in Sources */,
 				8E86E2762C1B3315009FE3AB /* ProfileImageView.swift in Sources */,
