@@ -13,7 +13,7 @@
 		8E86E2462C1AF1F0009FE3AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E86E2452C1AF1F0009FE3AB /* Assets.xcassets */; };
 		8E86E2492C1AF1F0009FE3AB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8E86E2482C1AF1F0009FE3AB /* Base */; };
 		8E86E2512C1AF495009FE3AB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8E86E2502C1AF495009FE3AB /* .gitignore */; };
-		8E86E2542C1B0B86009FE3AB /* SColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2532C1B0B86009FE3AB /* SColors.swift */; };
+		8E86E2542C1B0B86009FE3AB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2532C1B0B86009FE3AB /* Resource.swift */; };
 		8E86E2582C1B0F18009FE3AB /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2572C1B0F18009FE3AB /* OnBoardView.swift */; };
 		8E86E25A2C1B0F22009FE3AB /* OnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2592C1B0F22009FE3AB /* OnBoardViewController.swift */; };
 		8E86E25D2C1B0F95009FE3AB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8E86E25C2C1B0F95009FE3AB /* Kingfisher */; };
@@ -21,6 +21,7 @@
 		8E86E2632C1B0FAD009FE3AB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8E86E2622C1B0FAD009FE3AB /* SnapKit */; };
 		8E86E2662C1B0FB9009FE3AB /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8E86E2652C1B0FB9009FE3AB /* Toast */; };
 		8E86E2692C1B0FCC009FE3AB /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8E86E2682C1B0FCC009FE3AB /* IQKeyboardManagerSwift */; };
+		8E86E26D2C1B1506009FE3AB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E26C2C1B1506009FE3AB /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +33,10 @@
 		8E86E2482C1AF1F0009FE3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E86E24A2C1AF1F0009FE3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E86E2502C1AF495009FE3AB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		8E86E2532C1B0B86009FE3AB /* SColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SColors.swift; sourceTree = "<group>"; };
+		8E86E2532C1B0B86009FE3AB /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		8E86E2572C1B0F18009FE3AB /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		8E86E2592C1B0F22009FE3AB /* OnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
+		8E86E26C2C1B1506009FE3AB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +75,7 @@
 		8E86E23B2C1AF1EE009FE3AB /* Shopper */ = {
 			isa = PBXGroup;
 			children = (
-				8E86E2552C1B0EF5009FE3AB /* Screen */,
+				8E86E2552C1B0EF5009FE3AB /* UI */,
 				8E86E2522C1B0B5B009FE3AB /* Resource */,
 				8E86E23C2C1AF1EE009FE3AB /* AppDelegate.swift */,
 				8E86E23E2C1AF1EE009FE3AB /* SceneDelegate.swift */,
@@ -88,26 +90,35 @@
 		8E86E2522C1B0B5B009FE3AB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				8E86E2532C1B0B86009FE3AB /* SColors.swift */,
+				8E86E2532C1B0B86009FE3AB /* Resource.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		8E86E2552C1B0EF5009FE3AB /* Screen */ = {
+		8E86E2552C1B0EF5009FE3AB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				8E86E2562C1B0F06009FE3AB /* OnBoard */,
+				8E86E26B2C1B14CD009FE3AB /* Custom */,
+				8E86E2562C1B0F06009FE3AB /* OnBoardScreen */,
 			);
-			path = Screen;
+			path = UI;
 			sourceTree = "<group>";
 		};
-		8E86E2562C1B0F06009FE3AB /* OnBoard */ = {
+		8E86E2562C1B0F06009FE3AB /* OnBoardScreen */ = {
 			isa = PBXGroup;
 			children = (
 				8E86E2572C1B0F18009FE3AB /* OnBoardView.swift */,
 				8E86E2592C1B0F22009FE3AB /* OnBoardViewController.swift */,
 			);
-			path = OnBoard;
+			path = OnBoardScreen;
+			sourceTree = "<group>";
+		};
+		8E86E26B2C1B14CD009FE3AB /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				8E86E26C2C1B1506009FE3AB /* CustomButton.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +208,9 @@
 			files = (
 				8E86E2412C1AF1EE009FE3AB /* ViewController.swift in Sources */,
 				8E86E2582C1B0F18009FE3AB /* OnBoardView.swift in Sources */,
-				8E86E2542C1B0B86009FE3AB /* SColors.swift in Sources */,
+				8E86E2542C1B0B86009FE3AB /* Resource.swift in Sources */,
 				8E86E23D2C1AF1EE009FE3AB /* AppDelegate.swift in Sources */,
+				8E86E26D2C1B1506009FE3AB /* CustomButton.swift in Sources */,
 				8E86E25A2C1B0F22009FE3AB /* OnBoardViewController.swift in Sources */,
 				8E86E23F2C1AF1EE009FE3AB /* SceneDelegate.swift in Sources */,
 			);
