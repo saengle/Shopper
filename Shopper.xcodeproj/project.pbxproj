@@ -26,6 +26,10 @@
 		8E86E2722C1B320C009FE3AB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2712C1B320C009FE3AB /* EditProfileViewController.swift */; };
 		8E86E2742C1B3214009FE3AB /* SetEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */; };
 		8E86E2762C1B3315009FE3AB /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2752C1B3315009FE3AB /* ProfileImageView.swift */; };
+		8E86E2792C1B64ED009FE3AB /* SetEditProfieImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2782C1B64ED009FE3AB /* SetEditProfieImageViewController.swift */; };
+		8E86E27B2C1B6547009FE3AB /* SetEditProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E27A2C1B6547009FE3AB /* SetEditProfileImageView.swift */; };
+		8EA107A42C1C265E00CAC8FB /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107A32C1C265E00CAC8FB /* ProfileImageCell.swift */; };
+		8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107A62C1C294100CAC8FB /* Identifier+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		8E86E2712C1B320C009FE3AB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfileView.swift; sourceTree = "<group>"; };
 		8E86E2752C1B3315009FE3AB /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		8E86E2782C1B64ED009FE3AB /* SetEditProfieImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfieImageViewController.swift; sourceTree = "<group>"; };
+		8E86E27A2C1B6547009FE3AB /* SetEditProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfileImageView.swift; sourceTree = "<group>"; };
+		8EA107A32C1C265E00CAC8FB /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
+		8EA107A62C1C294100CAC8FB /* Identifier+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identifier+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,7 @@
 		8E86E23B2C1AF1EE009FE3AB /* Shopper */ = {
 			isa = PBXGroup;
 			children = (
+				8EA107A52C1C292600CAC8FB /* Extension */,
 				8E86E2552C1B0EF5009FE3AB /* UI */,
 				8E86E2522C1B0B5B009FE3AB /* Resource */,
 				8E86E23C2C1AF1EE009FE3AB /* AppDelegate.swift */,
@@ -106,6 +115,8 @@
 		8E86E2552C1B0EF5009FE3AB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8EA107A82C1C451200CAC8FB /* SearchScreen */,
+				8E86E2772C1B64C6009FE3AB /* ProfileImageScreen */,
 				8E86E26B2C1B14CD009FE3AB /* Custom */,
 				8E86E2562C1B0F06009FE3AB /* OnBoardScreen */,
 				8E86E26E2C1B301F009FE3AB /* ProfileScreen */,
@@ -139,6 +150,31 @@
 				8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */,
 			);
 			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
+		8E86E2772C1B64C6009FE3AB /* ProfileImageScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8E86E2782C1B64ED009FE3AB /* SetEditProfieImageViewController.swift */,
+				8E86E27A2C1B6547009FE3AB /* SetEditProfileImageView.swift */,
+				8EA107A32C1C265E00CAC8FB /* ProfileImageCell.swift */,
+			);
+			path = ProfileImageScreen;
+			sourceTree = "<group>";
+		};
+		8EA107A52C1C292600CAC8FB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8EA107A62C1C294100CAC8FB /* Identifier+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8EA107A82C1C451200CAC8FB /* SearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,11 +265,15 @@
 				8E86E2412C1AF1EE009FE3AB /* ViewController.swift in Sources */,
 				8E86E2582C1B0F18009FE3AB /* OnBoardView.swift in Sources */,
 				8E86E2742C1B3214009FE3AB /* SetEditProfileView.swift in Sources */,
+				8E86E27B2C1B6547009FE3AB /* SetEditProfileImageView.swift in Sources */,
 				8E86E2542C1B0B86009FE3AB /* Resource.swift in Sources */,
+				8EA107A42C1C265E00CAC8FB /* ProfileImageCell.swift in Sources */,
+				8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */,
 				8E86E23D2C1AF1EE009FE3AB /* AppDelegate.swift in Sources */,
 				8E86E2762C1B3315009FE3AB /* ProfileImageView.swift in Sources */,
 				8E86E26D2C1B1506009FE3AB /* Buttons.swift in Sources */,
 				8E86E2702C1B31F5009FE3AB /* SetProfileViewController.swift in Sources */,
+				8E86E2792C1B64ED009FE3AB /* SetEditProfieImageViewController.swift in Sources */,
 				8E86E25A2C1B0F22009FE3AB /* OnBoardViewController.swift in Sources */,
 				8E86E23F2C1AF1EE009FE3AB /* SceneDelegate.swift in Sources */,
 				8E86E2722C1B320C009FE3AB /* EditProfileViewController.swift in Sources */,

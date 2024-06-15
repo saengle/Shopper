@@ -31,64 +31,52 @@ class BigButton: UIButton {
 }
 
 // MARK:  프로필 사진이 들어가있는 이미지 버튼
-class profileImageButton: UIButton {
+class ProfileImageButton: UIButton {
     
-    init(style: Resource.Image.ImageSize) {
+    init(size: Resource.Image.ImageSize) {
         super.init(frame: .zero)
-        setWholeUI(style: style)
+        setWholeUI(size: size)
 
     }
     
-    func setWholeUI( style: Resource.Image.ImageSize) {
+    func setWholeUI( size: Resource.Image.ImageSize) {
         self.layer.masksToBounds = true
-        configureLayout(style: style)
+        configureLayout(size: size)
         
-        switch style {
+        switch size {
         case Resource.Image.ImageSize.big:
             self.tintColor = Resource.MyColors.primary
             self.layer.borderColor = Resource.MyColors.primary.cgColor
             self.layer.cornerRadius = 50
-            self.layer.masksToBounds = true
             self.layer.borderWidth = 5
             self.layer.borderColor = Resource.MyColors.primary.cgColor
         case Resource.Image.ImageSize.selected:
             self.tintColor = Resource.MyColors.primary
+            self.alpha = 1.0
+            self.isEnabled = false
             self.layer.borderColor = Resource.MyColors.primary.cgColor
-            self.layer.cornerRadius = 20
-            self.layer.masksToBounds = true
+            self.layer.cornerRadius = (UIScreen.main.bounds.width - 62) / 8
             self.layer.borderWidth = 3
             self.layer.borderColor = Resource.MyColors.primary.cgColor
         case Resource.Image.ImageSize.unSelected:
             self.tintColor = Resource.MyColors.lightGray
             self.alpha = 0.5
+            self.isEnabled = false
             self.layer.borderColor = Resource.MyColors.lightGray.cgColor
-            self.layer.cornerRadius = 20
-            self.layer.masksToBounds = true
+            self.layer.cornerRadius = (UIScreen.main.bounds.width - 62) / 8
             self.layer.borderWidth = 1
             self.layer.borderColor = Resource.MyColors.lightGray.cgColor
         }
     }
  
-    func configureLayout(style: Resource.Image.ImageSize) {
-       
-        switch style {
-        case Resource.Image.ImageSize.big:
+    func configureLayout(size: Resource.Image.ImageSize) {
+        if size == Resource.Image.ImageSize.big {
             self.snp.makeConstraints { make in
                 make.width.height.equalTo(100)
             }
-        case Resource.Image.ImageSize.selected:
-            self.snp.makeConstraints { make in
-                make.width.height.equalTo(40)
-            }
-        case Resource.Image.ImageSize.unSelected:
-            self.snp.makeConstraints { make in
-                make.width.height.equalTo(40)
-                
-            }
-            
         }
-       
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

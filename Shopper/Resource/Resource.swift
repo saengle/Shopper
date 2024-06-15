@@ -36,20 +36,30 @@ enum Resource {
             case big
             case selected
             case unSelected
+            
+            
         }
-        
-        enum ImageStyle {
-            static let image0 = UIImage(named: "profile_0")
-            static let image1 = UIImage(named: "profile_1")
-            static let image2 = UIImage(named: "profile_2")
-            static let image3 = UIImage(named: "profile_3")
-            static let image4 = UIImage(named: "profile_4")
-            static let image5 = UIImage(named: "profile_5")
-            static let image6 = UIImage(named: "profile_6")
-            static let image7 = UIImage(named: "profile_7")
-            static let image8 = UIImage(named: "profile_8")
-            static let image9 = UIImage(named: "profile_9")
-            static let image10 = UIImage(named: "profile_10")
+        enum ImageList: String, CaseIterable {
+            case profile = "profile_0"
+            //            case profile_1
+            //            case profile_2
+            //            case profile_3
+            //            case profile_4
+            //            case profile_5
+            //            case profile_6
+            //            case profile_7
+            //            case profile_8
+            //            case profile_9
+            //            case profile_10
+            //            case profile_11
+            
+            var list: [String] { // 인스턴스 연산 프로퍼티
+                switch self {
+                case .profile:
+                    return [ "profile_0", "profile_1", "profile_3", "profile_4", "profile_5", "profile_6", "profile_7", "profile_8", "profile_9", "profile_10", "profile_11" ]
+                }
+                
+            }
         }
     }
 }

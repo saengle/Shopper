@@ -11,7 +11,7 @@ import SnapKit
 
 class SetEditProfileView: UIView {
     
-    let profileImageView = profileImageButton(style: Resource.Image.ImageSize.big)
+    let profileImageButton = ProfileImageButton(size: Resource.Image.ImageSize.big)
     
     let cameraImage = {
         let iv = UIImageView()
@@ -65,16 +65,17 @@ class SetEditProfileView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        self.addSubview(profileImageView)
-        profileImageView.setImage(Resource.Image.ImageStyle.image0, for: .normal)
-        profileImageView.snp.makeConstraints { make in
+        self.addSubview(profileImageButton)
+        // MARK: 아래 인덱스 수정으로 프로필 사진 바꾸기
+        profileImageButton.setImage(UIImage(named: Resource.Image.ImageList.allCases[0].rawValue), for: .normal)
+        profileImageButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).inset(16)
         }
         self.addSubview(cameraCircleView)
         self.addSubview(cameraImage)
         cameraImage.snp.makeConstraints { make in
-            make.trailing.bottom.equalTo(profileImageView).inset(8)
+            make.trailing.bottom.equalTo(profileImageButton).inset(8)
         }
         cameraCircleView.snp.makeConstraints { make in
             make.center.equalTo(cameraImage.snp.center)
