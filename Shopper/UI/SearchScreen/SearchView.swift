@@ -36,9 +36,29 @@ class SearchView: UIView {
         return v
     }()
     
-    let recentView = {
+    let underLine = {
         let v = UIView()
-    }
+        v.backgroundColor = Resource.MyColors.lightGray
+        v.snp.makeConstraints { make in
+            make.height.equalTo(1)
+        }
+        return v
+    }()
+    
+    let recentSearchLabel = {
+        let lb = UILabel()
+        lb.text = "최근 검색"
+        lb.font = Resource.Font.bold15
+        return lb
+    }()
+    let removeButton = {
+        let bt = UIButton()
+        bt.setTitle("전체 삭제", for: .normal)
+        bt.setTitleColor(Resource.MyColors.primary, for: .normal)
+        bt.tintColor = Resource.MyColors.primary
+        bt.titleLabel?.font = Resource.Font.normal13
+        return bt
+    }()
     let tableView = {
         let tb = UITableView()
         return tb
@@ -60,22 +80,41 @@ class SearchView: UIView {
 extension SearchView {
     private func configureHierachy() {
         self.addSubview(searchBar)
+        self.addSubview(underLine)
         self.addSubview(noSearchView)
         self.addSubview(tableView)
+        self.addSubview(recentSearchLabel)
+        self.addSubview(removeButton)
+        
     }
     private func configureLayout() {
         searchBar.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(self.safeAreaLayoutGuide)
             make.height.equalTo(44)
         }
+        underLine.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(8)
+            make.horizontalEdges.equalToSuperview()
+        }
+        
+        recentSearchLabel.snp.makeConstraints { make in
+            make.top.equalTo(underLine).offset(8)
+            make.leading.equalTo(self.safeAreaLayoutGuide).inset(16)
+        }
+        removeButton.snp.makeConstraints { make in
+            make.top.equalTo(underLine).offset(8)
+            make.trailing.equalTo(self.safeAreaLayoutGuide).inset(16)
+            make.centerY.equalTo(recentSearchLabel)
+        }
         
         noSearchView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom)
+            make.top.equalTo(removeButton.snp.bottom).offset(8)
             make.horizontalEdges.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom)
+            make.top.equalTo(removeButton.snp.bottom).offset(8)
             make.horizontalEdges.bottom.equalTo(self.safeAreaLayoutGuide)
         }
+        
     }
 }

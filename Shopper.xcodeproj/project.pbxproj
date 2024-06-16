@@ -34,6 +34,8 @@
 		8EA107AC2C1DD97C00CAC8FB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107AB2C1DD97C00CAC8FB /* SearchView.swift */; };
 		8EA107B02C1EFB6C00CAC8FB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107AF2C1EFB6C00CAC8FB /* ApiManager.swift */; };
 		8EA107B22C1EFB7A00CAC8FB /* SecureAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107B12C1EFB7A00CAC8FB /* SecureAPI.swift */; };
+		8EA107B42C1F03D700CAC8FB /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107B32C1F03D700CAC8FB /* Shop.swift */; };
+		8EA107B72C1F1E8F00CAC8FB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107B62C1F1E8F00CAC8FB /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		8EA107AB2C1DD97C00CAC8FB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		8EA107AF2C1EFB6C00CAC8FB /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		8EA107B12C1EFB7A00CAC8FB /* SecureAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAPI.swift; sourceTree = "<group>"; };
+		8EA107B32C1F03D700CAC8FB /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		8EA107B62C1F1E8F00CAC8FB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		8E86E2552C1B0EF5009FE3AB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8EA107B52C1F121100CAC8FB /* SearchedScreen */,
 				8EA107A82C1C451200CAC8FB /* SearchScreen */,
 				8E86E2772C1B64C6009FE3AB /* ProfileImageScreen */,
 				8E86E26B2C1B14CD009FE3AB /* Custom */,
@@ -186,6 +191,7 @@
 			children = (
 				8EA107A92C1DD96500CAC8FB /* SearchViewController.swift */,
 				8EA107AB2C1DD97C00CAC8FB /* SearchView.swift */,
+				8EA107B62C1F1E8F00CAC8FB /* SearchTableViewCell.swift */,
 			);
 			path = SearchScreen;
 			sourceTree = "<group>";
@@ -193,8 +199,16 @@
 		8EA107AD2C1EFB2F00CAC8FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8EA107B32C1F03D700CAC8FB /* Shop.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8EA107B52C1F121100CAC8FB /* SearchedScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchedScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,8 +299,10 @@
 				8E86E2412C1AF1EE009FE3AB /* ViewController.swift in Sources */,
 				8E86E2582C1B0F18009FE3AB /* OnBoardView.swift in Sources */,
 				8E86E2742C1B3214009FE3AB /* SetEditProfileView.swift in Sources */,
+				8EA107B42C1F03D700CAC8FB /* Shop.swift in Sources */,
 				8E86E27B2C1B6547009FE3AB /* SetEditProfileImageView.swift in Sources */,
 				8E86E2542C1B0B86009FE3AB /* Resource.swift in Sources */,
+				8EA107B72C1F1E8F00CAC8FB /* SearchTableViewCell.swift in Sources */,
 				8EA107A42C1C265E00CAC8FB /* ProfileImageCell.swift in Sources */,
 				8EA107AC2C1DD97C00CAC8FB /* SearchView.swift in Sources */,
 				8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */,

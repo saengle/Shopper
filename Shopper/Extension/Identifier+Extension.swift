@@ -11,3 +11,7 @@ extension UICollectionViewCell {
     static let identifier = String(describing: UICollectionViewCell.self)
 }
 
+extension UITableViewCell {
+    static let identifier = String(describing: UITableViewCell.self)
+}
+
