@@ -38,6 +38,16 @@ extension SetProfileViewController {
     
     @objc private func doneButtonClicked() {
         print(#function)
+//        UserDefaults.standard.setValue(true, forKey: "isLogedIn")
+        // UI어플리케이션에서 첫번째 씬을 찾아서 ...
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        // 씬 딜리게이트 파일에 접근 ( 씬 딜리게이트 파일 안에 들어가면 윈도우를 찾아 올 수 있음.)
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let vc = SearchViewController()
+        let nvc = UINavigationController(rootViewController: vc)
+        sceneDelegate?.window?.rootViewController = nvc   // entrypoint
+        sceneDelegate?.window?.makeKeyAndVisible()  //show
     }
 
 }
