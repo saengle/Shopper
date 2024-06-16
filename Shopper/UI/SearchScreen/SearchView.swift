@@ -36,6 +36,9 @@ class SearchView: UIView {
         return v
     }()
     
+    let recentView = {
+        let v = UIView()
+    }
     let tableView = {
         let tb = UITableView()
         return tb
@@ -47,8 +50,6 @@ class SearchView: UIView {
         configureHierachy()
         configureLayout()
         noSearchView.isHidden = true
-        
-        
     }
     
     required init?(coder: NSCoder) {

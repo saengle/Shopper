@@ -32,6 +32,8 @@
 		8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107A62C1C294100CAC8FB /* Identifier+Extension.swift */; };
 		8EA107AA2C1DD96500CAC8FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107A92C1DD96500CAC8FB /* SearchViewController.swift */; };
 		8EA107AC2C1DD97C00CAC8FB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107AB2C1DD97C00CAC8FB /* SearchView.swift */; };
+		8EA107B02C1EFB6C00CAC8FB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107AF2C1EFB6C00CAC8FB /* ApiManager.swift */; };
+		8EA107B22C1EFB7A00CAC8FB /* SecureAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107B12C1EFB7A00CAC8FB /* SecureAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		8EA107A62C1C294100CAC8FB /* Identifier+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identifier+Extension.swift"; sourceTree = "<group>"; };
 		8EA107A92C1DD96500CAC8FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8EA107AB2C1DD97C00CAC8FB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		8EA107AF2C1EFB6C00CAC8FB /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		8EA107B12C1EFB7A00CAC8FB /* SecureAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		8E86E23B2C1AF1EE009FE3AB /* Shopper */ = {
 			isa = PBXGroup;
 			children = (
+				8EA107AD2C1EFB2F00CAC8FB /* Model */,
 				8EA107A52C1C292600CAC8FB /* Extension */,
 				8E86E2552C1B0EF5009FE3AB /* UI */,
 				8E86E2522C1B0B5B009FE3AB /* Resource */,
@@ -104,6 +109,8 @@
 				8E86E2452C1AF1F0009FE3AB /* Assets.xcassets */,
 				8E86E2472C1AF1F0009FE3AB /* LaunchScreen.storyboard */,
 				8E86E24A2C1AF1F0009FE3AB /* Info.plist */,
+				8EA107AF2C1EFB6C00CAC8FB /* ApiManager.swift */,
+				8EA107B12C1EFB7A00CAC8FB /* SecureAPI.swift */,
 			);
 			path = Shopper;
 			sourceTree = "<group>";
@@ -181,6 +188,13 @@
 				8EA107AB2C1DD97C00CAC8FB /* SearchView.swift */,
 			);
 			path = SearchScreen;
+			sourceTree = "<group>";
+		};
+		8EA107AD2C1EFB2F00CAC8FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,11 +292,13 @@
 				8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */,
 				8E86E23D2C1AF1EE009FE3AB /* AppDelegate.swift in Sources */,
 				8E86E2762C1B3315009FE3AB /* ProfileImageView.swift in Sources */,
+				8EA107B02C1EFB6C00CAC8FB /* ApiManager.swift in Sources */,
 				8E86E26D2C1B1506009FE3AB /* Buttons.swift in Sources */,
 				8EA107AA2C1DD96500CAC8FB /* SearchViewController.swift in Sources */,
 				8E86E2702C1B31F5009FE3AB /* SetProfileViewController.swift in Sources */,
 				8E86E2792C1B64ED009FE3AB /* SetEditProfieImageViewController.swift in Sources */,
 				8E86E25A2C1B0F22009FE3AB /* OnBoardViewController.swift in Sources */,
+				8EA107B22C1EFB7A00CAC8FB /* SecureAPI.swift in Sources */,
 				8E86E23F2C1AF1EE009FE3AB /* SceneDelegate.swift in Sources */,
 				8E86E2722C1B320C009FE3AB /* EditProfileViewController.swift in Sources */,
 			);

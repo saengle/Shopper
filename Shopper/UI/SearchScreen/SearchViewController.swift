@@ -10,6 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
     
     let searchView = SearchView()
+    let apiManager = ApiManager()
     
     override func loadView() {
         view = searchView
@@ -20,6 +21,7 @@ class SearchViewController: UIViewController {
         self.navigationItem.title = "Shopper Saengle님!"
         searchView.tableView.delegate = self
         searchView.tableView.dataSource = self
+        apiManager.callShoppingRequest(query: "아이폰", sort: "sim")
     }
 }
 
