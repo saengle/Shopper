@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let vc = TabbarController()
             window?.rootViewController = vc   // entrypoint
         } else {
-            let vc = SetProfileViewController()
+            let vc = OnBoardViewController()
             let nvc = UINavigationController(rootViewController: vc)
             window?.rootViewController = nvc   // entrypoint
         }

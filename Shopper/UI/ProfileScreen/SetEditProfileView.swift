@@ -54,7 +54,7 @@ class SetEditProfileView: UIView {
     
     let stateLabel = {
         let lb = UILabel()
-        lb.text = "상태를 확인해 주세요"
+        lb.text = TextValidation.letterCount.rawValue
         lb.textColor = Resource.MyColors.primary
         lb.font = Resource.Font.normal13
         return lb
@@ -111,6 +111,9 @@ class SetEditProfileView: UIView {
     func  setMainImage(image: String) {
         //이미지 수정 필요
         profileImageButton.setImage(UIImage(named: image), for: .normal)
+    }
+    func changeTextValidationLabel(state: String) {
+        stateLabel.text = state
     }
 }
 

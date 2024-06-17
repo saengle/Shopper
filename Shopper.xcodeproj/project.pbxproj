@@ -47,6 +47,7 @@
 		8EF74DC42C2038D800BB0233 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC32C2038D800BB0233 /* SettingView.swift */; };
 		8EF74DC62C20558500BB0233 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC52C20558500BB0233 /* SettingTableViewCell.swift */; };
 		8EF74DC82C206A9700BB0233 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC72C206A9700BB0233 /* UIButton+Extension.swift */; };
+		8EF74DCA2C207BB000BB0233 /* TextValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC92C207BB000BB0233 /* TextValidation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		8EF74DC32C2038D800BB0233 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		8EF74DC52C20558500BB0233 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		8EF74DC72C206A9700BB0233 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		8EF74DC92C207BB000BB0233 /* TextValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValidation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				8E86E24A2C1AF1F0009FE3AB /* Info.plist */,
 				8EA107AF2C1EFB6C00CAC8FB /* ApiManager.swift */,
 				8EA107B12C1EFB7A00CAC8FB /* SecureAPI.swift */,
+				8EF74DC92C207BB000BB0233 /* TextValidation.swift */,
 			);
 			path = Shopper;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				8EA107BD2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift in Sources */,
 				8E86E25A2C1B0F22009FE3AB /* OnBoardViewController.swift in Sources */,
 				8EF74DC62C20558500BB0233 /* SettingTableViewCell.swift in Sources */,
+				8EF74DCA2C207BB000BB0233 /* TextValidation.swift in Sources */,
 				8EA107B22C1EFB7A00CAC8FB /* SecureAPI.swift in Sources */,
 				8EA107BB2C1F37B700CAC8FB /* SearchedView.swift in Sources */,
 				8EF74DBF2C2037EB00BB0233 /* TabBarController.swift in Sources */,
