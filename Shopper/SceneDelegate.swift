@@ -16,30 +16,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let scene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: scene)
-        let vc = OnBoardViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
-//
-//        let data = UserDefaults.standard.bool(forKey: "isLogedIn")
 //        guard let scene = (scene as? UIWindowScene) else { return }
 //        window = UIWindow(windowScene: scene)
-//        
-//        if data {
-//             let vc = MainViewController()
-//            let vc = TabbarController()
-//            let nvc = UINavigationController(rootViewController: vc)
-//            window?.rootViewController = nvc   // entrypoint
-//        } else {
-//            let vc = SignInViewController()
-//            let vc = TabbarController()
-//            let nvc = UINavigationController(rootViewController: vc)
-//            window?.rootViewController = nvc   // entrypoint
-//        }
-//        
-//        window?.makeKeyAndVisible()  //show
+//        let vc = OnBoardViewController()
+//        let nav = UINavigationController(rootViewController: vc)
+//        window?.rootViewController = nav
+//        window?.makeKeyAndVisible()
+
+        let data = UserDefaults.standard.bool(forKey: "isLogedIn")
+        guard let scene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene)
+        //data 로 구분
+        if true { // 유저이면 탭바로
+            let vc = TabbarController()
+            window?.rootViewController = vc   // entrypoint
+        } else {
+            let vc = SetProfileViewController()
+            let nvc = UINavigationController(rootViewController: vc)
+            window?.rootViewController = nvc   // entrypoint
+        }
+        
+        window?.makeKeyAndVisible()  //show
         
         
     }
