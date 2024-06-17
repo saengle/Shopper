@@ -74,7 +74,6 @@ class SearchedCollectionViewCell: UICollectionViewCell {
                 mainImageView.kf.indicatorType = .activity
                 mainImageView.kf.setImage(
                     with: url,
-                    placeholder: UIImage(named: "placeholderImage"),
                     options: [.processor(processor),
                               .scaleFactor(UIScreen.main.scale),
                               .transition(.fade(1)),
