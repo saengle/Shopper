@@ -53,6 +53,7 @@ extension SetProfileViewController {
         } else if text.filter({ $0.isNumber }).count >= 1 {
             return TextValidation.haveNumber
         }
+        self.myName = text
         return TextValidation.pass
     }
 }
