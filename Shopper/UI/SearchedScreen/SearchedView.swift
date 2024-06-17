@@ -49,7 +49,6 @@ class SearchedView: UIView {
         self.backgroundColor = .white
         configureHierachy()
         configureLayout()
-        totalLabel.text = "244,564개의 검색 결과"
     }
     
     required init?(coder: NSCoder) {
@@ -58,6 +57,9 @@ class SearchedView: UIView {
 }
 
 extension SearchedView {
+    func setTotalLabel(total: String) {
+        totalLabel.text = "\(total)개의 검색 결과"
+    }
     
     private func configureHierachy() {
         [underLine, totalLabel, simButton, dateButton, dscButton, ascButton, collectionView].forEach{self.addSubview($0)}

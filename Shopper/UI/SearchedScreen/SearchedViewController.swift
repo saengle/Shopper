@@ -32,7 +32,12 @@ class SearchedViewController: UIViewController {
                 guard let shop = shop as? Shop else { return }
                 self.myShop.append(contentsOf: [shop])
                 self.searchedView.collectionView.reloadData()
-                //                        print(self.myShop)
+                self.myTotal = self.myShop.first?.total ?? 0
+                // MARK:  3자리 끊기
+                let numberFormatter: NumberFormatter = NumberFormatter()
+                numberFormatter.numberStyle = .decimal
+                let result: String = numberFormatter.string(for: self.myTotal)!
+                self.searchedView.setTotalLabel(total: result)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -58,14 +63,14 @@ extension SearchedViewController: UICollectionViewDelegate, UICollectionViewData
         return cell
     }
     
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            guard let link = self.myShop.first?.items?[indexPath.row].link else { return }
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-            User.link = link
-            guard let keyWord = self.myShop.first?.items?[indexPath.row].title else { return }
-            User.detailKeyWord = keyWord
-            let vc = ItemDetailViewController()
-            self.navigationController?.pushViewController((vc), animated: true)
-        }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let link = self.myShop.first?.items?[indexPath.row].link else { return }
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        User.link = link
+        guard let keyWord = self.myShop.first?.items?[indexPath.row].title else { return }
+        User.detailKeyWord = keyWord
+        let vc = ItemDetailViewController()
+        self.navigationController?.pushViewController((vc), animated: true)
+    }
     
 }
