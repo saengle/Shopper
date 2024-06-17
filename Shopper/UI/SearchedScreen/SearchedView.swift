@@ -26,7 +26,7 @@ class SearchedView: UIView {
         return lb
     }()
     
-    let buttonList: [UIButton] = []
+    lazy var buttonList: [UIButton] = [simButton, dateButton, dscButton, ascButton]
     let simButton = SortButton(title: Sort.sim.rawValue)
     let dateButton = SortButton(title: Sort.date.rawValue)
     let dscButton = SortButton(title: Sort.dsc.rawValue)

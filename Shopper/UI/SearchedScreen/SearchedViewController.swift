@@ -12,6 +12,7 @@ class SearchedViewController: UIViewController {
     let searchedView = SearchedView()
     var searchWord = ""
     var likeList = [String]()
+    var mySort = Sort.sim
     private var myShop: [Shop] = []
     private var myTotal: Int = 0
     private var myPage: Int = 0
@@ -27,7 +28,16 @@ class SearchedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        apiManager.callShoppingRequest(query: User.keyWord, sort: "sim") { result in
+        callApi(query: User.keyWord, sort: mySort)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchedView.collectionView.reloadData()
+    }
+}
+extension SearchedViewController {
+    private func callApi(query: String, sort: Sort) {
+        apiManager.callShoppingRequest(query: query, sort: "\(sort)") { result in
             switch result{
             case .success(let shop):
                 guard let shop = shop as? Shop else { return }
@@ -43,13 +53,17 @@ class SearchedViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+        for element in  self.searchedView.buttonList {
+            if element.titleLabel?.text! ==  "   " + mySort.rawValue + "   " {
+                element.setTitleColor(Resource.MyColors.white, for: .normal)
+                element.backgroundColor = Resource.MyColors.darkGray
+            } else {
+                element.setTitleColor(Resource.MyColors.black, for: .normal)
+                element.backgroundColor = Resource.MyColors.white
+            }
+        }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        searchedView.collectionView.reloadData()
-    }
-}
-extension SearchedViewController {
+    
     @objc private func addListButtonClicked(_ sender: UIButton) {
         guard let id = self.myShop.first?.items?[sender.tag].productID else {return}
         // 라이크리스트가 id를 갖고있으면 (삭제)
