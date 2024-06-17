@@ -36,6 +36,8 @@ extension SearchedViewController: UICollectionViewDelegate, UICollectionViewData
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        <#code#>
+    }
     
 }

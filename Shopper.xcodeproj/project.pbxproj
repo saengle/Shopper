@@ -39,6 +39,9 @@
 		8EA107B92C1F37AC00CAC8FB /* SearchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107B82C1F37AC00CAC8FB /* SearchedViewController.swift */; };
 		8EA107BB2C1F37B700CAC8FB /* SearchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107BA2C1F37B700CAC8FB /* SearchedView.swift */; };
 		8EA107BD2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107BC2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift */; };
+		8EF74DB72C2025D500BB0233 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DB62C2025D500BB0233 /* ItemDetailViewController.swift */; };
+		8EF74DB92C20262000BB0233 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DB82C20262000BB0233 /* ItemDetailView.swift */; };
+		8EF74DBC2C20350400BB0233 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DBB2C20350400BB0233 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +74,9 @@
 		8EA107B82C1F37AC00CAC8FB /* SearchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedViewController.swift; sourceTree = "<group>"; };
 		8EA107BA2C1F37B700CAC8FB /* SearchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedView.swift; sourceTree = "<group>"; };
 		8EA107BC2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedCollectionViewCell.swift; sourceTree = "<group>"; };
+		8EF74DB62C2025D500BB0233 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		8EF74DB82C20262000BB0233 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		8EF74DBB2C20350400BB0233 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		8E86E23B2C1AF1EE009FE3AB /* Shopper */ = {
 			isa = PBXGroup;
 			children = (
+				8EF74DBA2C2034FB00BB0233 /* User */,
 				8EA107AD2C1EFB2F00CAC8FB /* Model */,
 				8EA107A52C1C292600CAC8FB /* Extension */,
 				8E86E2552C1B0EF5009FE3AB /* UI */,
@@ -136,6 +143,7 @@
 		8E86E2552C1B0EF5009FE3AB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8EF74DB52C2025AF00BB0233 /* ItemDetailScreen */,
 				8EA107B52C1F121100CAC8FB /* SearchedScreen */,
 				8EA107A82C1C451200CAC8FB /* SearchScreen */,
 				8E86E2772C1B64C6009FE3AB /* ProfileImageScreen */,
@@ -218,6 +226,23 @@
 				8EA107BC2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift */,
 			);
 			path = SearchedScreen;
+			sourceTree = "<group>";
+		};
+		8EF74DB52C2025AF00BB0233 /* ItemDetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8EF74DB62C2025D500BB0233 /* ItemDetailViewController.swift */,
+				8EF74DB82C20262000BB0233 /* ItemDetailView.swift */,
+			);
+			path = ItemDetailScreen;
+			sourceTree = "<group>";
+		};
+		8EF74DBA2C2034FB00BB0233 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8EF74DBB2C20350400BB0233 /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,15 +330,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EF74DB72C2025D500BB0233 /* ItemDetailViewController.swift in Sources */,
 				8E86E2412C1AF1EE009FE3AB /* ViewController.swift in Sources */,
 				8E86E2582C1B0F18009FE3AB /* OnBoardView.swift in Sources */,
 				8E86E2742C1B3214009FE3AB /* SetEditProfileView.swift in Sources */,
 				8EA107B42C1F03D700CAC8FB /* Shop.swift in Sources */,
+				8EF74DBC2C20350400BB0233 /* User.swift in Sources */,
 				8E86E27B2C1B6547009FE3AB /* SetEditProfileImageView.swift in Sources */,
 				8EA107B92C1F37AC00CAC8FB /* SearchedViewController.swift in Sources */,
 				8E86E2542C1B0B86009FE3AB /* Resource.swift in Sources */,
 				8EA107B72C1F1E8F00CAC8FB /* SearchTableViewCell.swift in Sources */,
 				8EA107A42C1C265E00CAC8FB /* ProfileImageCell.swift in Sources */,
+				8EF74DB92C20262000BB0233 /* ItemDetailView.swift in Sources */,
 				8EA107AC2C1DD97C00CAC8FB /* SearchView.swift in Sources */,
 				8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */,
 				8E86E23D2C1AF1EE009FE3AB /* AppDelegate.swift in Sources */,
