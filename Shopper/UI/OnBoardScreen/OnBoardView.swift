@@ -41,12 +41,6 @@ class OnBoardView: UIView {
         configureLayout(isLaunching: false)
     }
     
-    //    override init(frame: CGRect) {
-    //        super.init(frame: frame)
-    //        configureHierachy()
-    //        configureLayout()
-    //    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -55,14 +49,12 @@ class OnBoardView: UIView {
         isLaunching ?  [mainTitleLabel, mainImageLabel, nameLabel].forEach{self.addSubview($0)} :  [mainTitleLabel, mainImageLabel, startButton].forEach{self.addSubview($0)}
     }
     func configureLayout(isLaunching: Bool) {
-        //        MainTitleLabel.backgroundColor = .purple
         mainTitleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.safeAreaLayoutGuide).inset(72)
             make.height.equalTo(60)
             make.width.equalTo(200)
         }
-        //        MainImageLabel.backgroundColor = .blue
         mainImageLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
             make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(16)

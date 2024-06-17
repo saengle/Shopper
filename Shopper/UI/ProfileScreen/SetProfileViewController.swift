@@ -10,7 +10,6 @@ import UIKit
 class SetProfileViewController: UIViewController {
     
     let profileView = SetEditProfileView()
-    var myGuest = Guest(isUser: false, user: [])
     var myName = ""
     var myProfile = ""
     var myTextValidation: TextValidation = TextValidation.letterCount
@@ -29,8 +28,8 @@ class SetProfileViewController: UIViewController {
     }
     // 프로필사진 고르고 돌아올 때 이미지 세팅
     override func viewWillAppear(_ animated: Bool) {
-        if let pf = UserDefaults.standard.string(forKey: "UserProfile") {
-            self.myProfile = pf
+        if User.userProfile != "" {
+            self.myProfile = User.userProfile
         }
         self.profileView.setMainImage(image: myProfile)
     }
@@ -76,24 +75,25 @@ extension SetProfileViewController {
 
         // UI어플리케이션에서 첫번째 씬을 찾아서 ...
         if myTextValidation == TextValidation.pass {
-            UserDefaults.standard.setValue(self.myProfile, forKey: "UserProfile")
-            UserDefaults.standard.setValue(self.myName, forKey: "UserName")
+            User.isUser = true
+            User.userName = myProfile
+            User.userName = myName
             let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
             // 씬 딜리게이트 파일에 접근 ( 씬 딜리게이트 파일 안에 들어가면 윈도우를 찾아 올 수 있음.)
             let sceneDelegate = windowScene?.delegate as? SceneDelegate
-            let vc = SearchViewController()
+            let vc = TabbarController()
             let nvc = UINavigationController(rootViewController: vc)
             sceneDelegate?.window?.rootViewController = nvc   // entrypoint
             sceneDelegate?.window?.makeKeyAndVisible()  //show
         }
     }
-
 }
+
 extension SetProfileViewController {
     private func setRandomImage(image: String){
         if image == "" {
             myProfile = Resource.Image.ImageList.allCases[0].list[Int.random(in: 0...Resource.Image.ImageList.allCases[0].list.count - 1)]
-            UserDefaults.standard.set(myProfile, forKey: "UserProfile")
+            User.userProfile = myProfile
         }
     }
 }

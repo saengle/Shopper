@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window?.rootViewController = nav
 //        window?.makeKeyAndVisible()
 
-        let data = UserDefaults.standard.bool(forKey: "isUser")
+        let data = User.isUser
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         //data 로 구분

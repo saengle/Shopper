@@ -11,7 +11,7 @@ class SearchViewController: UIViewController {
     
     let searchView = SearchView()
     let apiManager = ApiManager()
-    let likeList: [Int] = [37, 5, 15]
+    private  var likeList: [Int] = []
     
     override func loadView() {
         view = searchView
@@ -19,7 +19,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Shopper Saengle님!"
+        self.navigationItem.title = "Shopper \(User.userName)님!"
         searchView.tableView.delegate = self
         searchView.tableView.dataSource = self
         searchView.tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
@@ -33,14 +33,20 @@ class SearchViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-        UserDefaults.standard.setValue(likeList, forKey: "likeList")
-//        print(UserDefaults.standard.array(forKey: "likeList"))
+        if let list = User.likeList as? [Int] {
+            likeList = list
+        }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let list = User.likeList as? [Int] {
+            likeList = list
+        }
+    }
 }
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return likeList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

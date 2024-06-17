@@ -18,7 +18,7 @@ class SetEditProfieImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myProfile = UserDefaults.standard.string(forKey: "UserProfile") ?? ""
+        myProfile = User.userProfile
         navigationItem.title = "PROFILE SETTING"
         navigationController?.navigationBar.tintColor = .black
         setEditView.profileCollectionView.register(ProfileImageCell.self, forCellWithReuseIdentifier: ProfileImageCell.identifier)
@@ -37,7 +37,7 @@ extension SetEditProfieImageViewController: UICollectionViewDelegate, UICollecti
     // MARK:  셀 그리기
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileImageCell.identifier, for: indexPath) as? ProfileImageCell else { return UICollectionViewCell()}
-        if UserDefaults.standard.string(forKey: "UserProfile") == Resource.Image.ImageList.allCases[0].list[indexPath.row] {
+        if User.userProfile == Resource.Image.ImageList.allCases[0].list[indexPath.row] {
             cell.makeCellImage(size: Resource.Image.ImageSize.selected, style: Resource.Image.ImageList.allCases[0].list[indexPath.row])
         } else {
             cell.makeCellImage(size: Resource.Image.ImageSize.unSelected, style: Resource.Image.ImageList.allCases[0].list[indexPath.row])
@@ -49,8 +49,8 @@ extension SetEditProfieImageViewController: UICollectionViewDelegate, UICollecti
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileImageCell.identifier, for: indexPath) as? ProfileImageCell {
             myProfile = Resource.Image.ImageList.allCases[0].list[indexPath.row]
-            UserDefaults.standard.set(Resource.Image.ImageList.allCases[0].list[indexPath.row], forKey: "UserProfile")
-            //아래 메서드 살아 있었는ㄷㅔ 왜 죽었을까 뭐하다 죽은거지 ..
+            User.userProfile = Resource.Image.ImageList.allCases[0].list[indexPath.row]
+            //아래 메서드 살리면 전체 리로드 -> 부분 리로드
 //            collectionView.reloadItems(at: [indexPath])
             setEditView.setMainImage(image: myProfile)
             collectionView.reloadData()

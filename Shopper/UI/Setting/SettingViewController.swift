@@ -41,7 +41,14 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if settingOptions.allCases[indexPath.row] == settingOptions.withdraw {
-            print("UIAlert 뜨면서 탈퇴 유도.")
+            resetDefaults()
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            // 씬 딜리게이트 파일에 접근 ( 씬 딜리게이트 파일 안에 들어가면 윈도우를 찾아 올 수 있음.)
+            let sceneDelegate = windowScene?.delegate as? SceneDelegate
+            let vc = OnBoardViewController()
+            let nvc = UINavigationController(rootViewController: vc)
+            sceneDelegate?.window?.rootViewController = nvc   // entrypoint
+            sceneDelegate?.window?.makeKeyAndVisible()  //show
         }
     }
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -49,3 +56,14 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
 //    }
     
 }
+
+extension SettingViewController {
+    private func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
+}
+
