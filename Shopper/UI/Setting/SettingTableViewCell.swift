@@ -34,6 +34,11 @@ class SettingTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: SettingTableViewCell.identifier)
         ordinarySetting()
     }
+    override func prepareForReuse() {
+        subLabel.text = ""
+        countLabel.text = ""
+        myImageView.isHidden = true
+    }
     
     private func ordinarySetting() {
         contentView.addSubview(mainLabel)
@@ -56,6 +61,7 @@ class SettingTableViewCell: UITableViewCell {
             make.trailing.equalTo(subLabel.snp.leading)
             make.centerY.equalToSuperview()
         }
+        myImageView.isHidden = false
         contentView.addSubview(myImageView)
         myImageView.snp.makeConstraints { make in
             make.trailing.equalTo(countLabel.snp.leading).offset(-4)

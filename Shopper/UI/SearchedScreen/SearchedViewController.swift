@@ -11,6 +11,8 @@ class SearchedViewController: UIViewController {
     
     let searchedView = SearchedView()
     var searchWord = ""
+    var oldLikeList = [String]()
+    var likeList = [String]()
     private var myShop: [Shop] = []
     private var myTotal: Int = 0
     private var myPage: Int = 0
@@ -44,7 +46,25 @@ class SearchedViewController: UIViewController {
         }
     }
 }
-
+extension SearchedViewController {
+    @objc private func addListButtonClicked(_ sender: UIButton) {
+        guard let id = self.myShop.first?.items?[sender.tag].productID else {return}
+        // 라이크리스트가 id를 갖고있으면 (삭제)
+        if likeList.contains(id) {
+            //인덱스 찾기
+           let deleteIndex = likeList.firstIndex { num in
+                num == id
+            }
+            likeList.remove(at: deleteIndex!) // 인덱스번째 엘리멘트 제거
+            User.likeList = self.likeList // 유저디폴츠값 리셋시키기.
+        } else {
+            likeList = User.likeList
+            self.likeList.append(id) //
+            User.likeList = self.likeList
+        }
+        self.searchedView.collectionView.reloadData()
+    }
+}
 extension SearchedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myShop.first?.items?.count ?? 0
@@ -54,12 +74,14 @@ extension SearchedViewController: UICollectionViewDelegate, UICollectionViewData
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchedCollectionViewCell.identifier, for: indexPath) as? SearchedCollectionViewCell else { return UICollectionViewCell()}
         guard let items = self.myShop.first?.items?[indexPath.row] else { return cell }
         cell.configureCell(data: items, like: false)
-        //        if User.likeList.con == self.myShop.first?.items[indexPath.row].productID {
-        //
-        //        } else {
-        //
-        //        }
-        //
+        cell.addListButton.tag = indexPath.row
+        cell.addListButton.addTarget(self, action: #selector(addListButtonClicked), for: .touchUpInside)
+        for e in User.likeList {
+            if items.productID == e {
+                cell.setAddListButtonImage(like: true)
+            }
+        }
+        
         return cell
     }
     

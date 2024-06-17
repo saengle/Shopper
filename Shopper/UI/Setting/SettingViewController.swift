@@ -24,6 +24,10 @@ class SettingViewController: UIViewController {
         settingView.tableView.rowHeight = 52
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        settingView.tableView.reloadData()
+    }
 }
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
@@ -51,6 +55,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             sceneDelegate?.window?.makeKeyAndVisible()  //show
         }
     }
+    
+    
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        <#code#>
 //    }
