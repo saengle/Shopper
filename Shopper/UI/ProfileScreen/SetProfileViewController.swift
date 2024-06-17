@@ -10,7 +10,9 @@ import UIKit
 class SetProfileViewController: UIViewController {
     
     let profileView = SetEditProfileView()
-    
+    var myGuest = Guest(isUser: false, user: [])
+    var myName = ""
+    var myProfile = ""
     override func loadView() {
         view = profileView
     }
@@ -20,6 +22,8 @@ class SetProfileViewController: UIViewController {
         navigationItem.title = "PROFILE SETTING"
         navigationController?.navigationBar.tintColor = .black
         ButtonsAddTargets()
+        self.setRandomImage(image: myProfile)
+        self.profileView.setMainImage(image: myProfile)
     }
     
     
@@ -32,6 +36,9 @@ extension SetProfileViewController {
     }
     
     @objc private func imageButtonClicked() {
+        let vc = SetEditProfieImageViewController()
+        vc.myProfile = self.myProfile
+        print(vc.myProfile, self.myProfile)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.pushViewController(SetEditProfieImageViewController(), animated: true)
     }
@@ -40,6 +47,10 @@ extension SetProfileViewController {
         print(#function)
 //        UserDefaults.standard.setValue(true, forKey: "isLogedIn")
         // UI어플리케이션에서 첫번째 씬을 찾아서 ...
+        if myGuest.isUser && myGuest.user.count == 1 {
+            
+        }
+        
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         // 씬 딜리게이트 파일에 접근 ( 씬 딜리게이트 파일 안에 들어가면 윈도우를 찾아 올 수 있음.)
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
@@ -50,4 +61,12 @@ extension SetProfileViewController {
         sceneDelegate?.window?.makeKeyAndVisible()  //show
     }
 
+}
+extension SetProfileViewController {
+    private func setRandomImage(image: String){
+        if image == "" {
+            myProfile = Resource.Image.ImageList.allCases[0].list[Int.random(in: 0...Resource.Image.ImageList.allCases[0].list.count - 1)]
+            UserDefaults.standard.set(myProfile, forKey: "UserProfile")
+        }
+    }
 }

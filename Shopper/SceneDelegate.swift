@@ -23,11 +23,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window?.rootViewController = nav
 //        window?.makeKeyAndVisible()
 
-        let data = UserDefaults.standard.bool(forKey: "isLogedIn")
+        let data = UserDefaults.standard.bool(forKey: "isUser")
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         //data 로 구분
-        if true { // 유저이면 탭바로
+        if data { // 유저이면 탭바로
             let vc = TabbarController()
             window?.rootViewController = vc   // entrypoint
         } else {
@@ -35,10 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let nvc = UINavigationController(rootViewController: vc)
             window?.rootViewController = nvc   // entrypoint
         }
-        
         window?.makeKeyAndVisible()  //show
-        
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

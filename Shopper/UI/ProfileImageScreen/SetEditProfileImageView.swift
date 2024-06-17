@@ -58,8 +58,7 @@ extension SetEditProfileImageView {
 
     }
     private func configureLayout() {
-        //이미지 수정 필요
-        profileImageView.setImage(UIImage(named: Resource.Image.ImageList.allCases[0].rawValue), for: .normal)
+       
         profileImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).inset(16)
@@ -69,4 +68,8 @@ extension SetEditProfileImageView {
             make.horizontalEdges.bottom.equalTo(self.safeAreaLayoutGuide).inset(16)
         }
     }
+    func  setMainImage(image: String) {
+        profileImageView.setImage(UIImage(named: image), for: .normal)
+    }
+    
 }

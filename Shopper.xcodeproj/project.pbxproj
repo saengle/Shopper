@@ -46,6 +46,7 @@
 		8EF74DC22C2038BB00BB0233 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC12C2038BB00BB0233 /* SettingViewController.swift */; };
 		8EF74DC42C2038D800BB0233 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC32C2038D800BB0233 /* SettingView.swift */; };
 		8EF74DC62C20558500BB0233 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC52C20558500BB0233 /* SettingTableViewCell.swift */; };
+		8EF74DC82C206A9700BB0233 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC72C206A9700BB0233 /* UIButton+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		8EF74DC12C2038BB00BB0233 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8EF74DC32C2038D800BB0233 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		8EF74DC52C20558500BB0233 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		8EF74DC72C206A9700BB0233 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				8EA107A62C1C294100CAC8FB /* Identifier+Extension.swift */,
+				8EF74DC72C206A9700BB0233 /* UIButton+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				8E86E26D2C1B1506009FE3AB /* Buttons.swift in Sources */,
 				8EA107AA2C1DD96500CAC8FB /* SearchViewController.swift in Sources */,
 				8E86E2702C1B31F5009FE3AB /* SetProfileViewController.swift in Sources */,
+				8EF74DC82C206A9700BB0233 /* UIButton+Extension.swift in Sources */,
 				8EF74DC42C2038D800BB0233 /* SettingView.swift in Sources */,
 				8E86E2792C1B64ED009FE3AB /* SetEditProfieImageViewController.swift in Sources */,
 				8EA107BD2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift in Sources */,

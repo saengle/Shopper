@@ -31,6 +31,7 @@ class BigButton: UIButton {
 }
 
 // MARK:  프로필 사진이 들어가있는 이미지 버튼
+// isEnabled = false 로 설정했을 때 alpha가 줄어드는거 수정하고싶다.. 
 class ProfileImageButton: UIButton {
     
     init(size: Resource.Image.ImageSize) {
@@ -45,27 +46,21 @@ class ProfileImageButton: UIButton {
         
         switch size {
         case Resource.Image.ImageSize.big:
-            self.tintColor = Resource.MyColors.primary
             self.layer.borderColor = Resource.MyColors.primary.cgColor
             self.layer.cornerRadius = 50
             self.layer.borderWidth = 5
-            self.layer.borderColor = Resource.MyColors.primary.cgColor
         case Resource.Image.ImageSize.selected:
-            self.tintColor = Resource.MyColors.primary
             self.alpha = 1.0
-            self.isEnabled = false
+            self.isEnabled = true
             self.layer.borderColor = Resource.MyColors.primary.cgColor
             self.layer.cornerRadius = (UIScreen.main.bounds.width - 62) / 8
             self.layer.borderWidth = 3
-            self.layer.borderColor = Resource.MyColors.primary.cgColor
         case Resource.Image.ImageSize.unSelected:
-            self.tintColor = Resource.MyColors.lightGray
             self.alpha = 0.5
             self.isEnabled = false
             self.layer.borderColor = Resource.MyColors.lightGray.cgColor
             self.layer.cornerRadius = (UIScreen.main.bounds.width - 62) / 8
             self.layer.borderWidth = 1
-            self.layer.borderColor = Resource.MyColors.lightGray.cgColor
         }
     }
  
@@ -76,7 +71,11 @@ class ProfileImageButton: UIButton {
             }
         }
     }
-    
+    open override var isEnabled: Bool{
+           didSet {
+               alpha = isEnabled ? 1.0 : 1.0
+           }
+       }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

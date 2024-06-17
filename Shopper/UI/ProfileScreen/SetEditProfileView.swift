@@ -67,7 +67,6 @@ class SetEditProfileView: UIView {
         self.backgroundColor = .white
         self.addSubview(profileImageButton)
         // MARK: 아래 인덱스 수정으로 프로필 사진 바꾸기
-        profileImageButton.setImage(UIImage(named: Resource.Image.ImageList.allCases[0].rawValue), for: .normal)
         profileImageButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).inset(16)
@@ -104,13 +103,15 @@ class SetEditProfileView: UIView {
             make.centerX.equalToSuperview()
             make.top.equalTo(stateLabel.snp.bottom).offset(16)
         }
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    func  setMainImage(image: String) {
+        //이미지 수정 필요
+        profileImageButton.setImage(UIImage(named: image), for: .normal)
+    }
 }
 
 
