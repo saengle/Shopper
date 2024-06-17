@@ -44,6 +44,10 @@ struct User {
         get { UserDefaults.standard.string(forKey: "link") ?? "" }
         set { UserDefaults.standard.set(newValue, forKey: "link") }
     }
+    static var nowId: String {
+        get { UserDefaults.standard.string(forKey: "nowId") ?? "" }
+        set { UserDefaults.standard.set(newValue, forKey: "nowId") }
+    }
 }
 
 

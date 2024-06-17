@@ -11,7 +11,6 @@ class SearchedViewController: UIViewController {
     
     let searchedView = SearchedView()
     var searchWord = ""
-    var oldLikeList = [String]()
     var likeList = [String]()
     private var myShop: [Shop] = []
     private var myTotal: Int = 0
@@ -45,6 +44,10 @@ class SearchedViewController: UIViewController {
             }
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchedView.collectionView.reloadData()
+    }
 }
 extension SearchedViewController {
     @objc private func addListButtonClicked(_ sender: UIButton) {
@@ -56,11 +59,11 @@ extension SearchedViewController {
                 num == id
             }
             likeList.remove(at: deleteIndex!) // 인덱스번째 엘리멘트 제거
-            User.likeList = self.likeList // 유저디폴츠값 리셋시키기.
+            User.likeList = self.likeList // 유저디폴츠에 적용(삭제).
         } else {
-            likeList = User.likeList
-            self.likeList.append(id) //
-            User.likeList = self.likeList
+            likeList = User.likeList // 유저디폴츠 라이크리스트 받아오기
+            self.likeList.append(id) // 임시 라이크리스트에 id 추가
+            User.likeList = self.likeList // 유저디폴츠 라이크리스트 추가
         }
         self.searchedView.collectionView.reloadData()
     }
@@ -91,6 +94,8 @@ extension SearchedViewController: UICollectionViewDelegate, UICollectionViewData
         User.link = link
         guard let keyWord = self.myShop.first?.items?[indexPath.row].title else { return }
         User.detailKeyWord = keyWord
+        guard let id = self.myShop.first?.items?[indexPath.row].productID else { return }
+        User.nowId = id
         let vc = ItemDetailViewController()
         self.navigationController?.pushViewController((vc), animated: true)
     }
