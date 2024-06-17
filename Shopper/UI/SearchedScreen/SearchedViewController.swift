@@ -13,6 +13,7 @@ class SearchedViewController: UIViewController {
     var searchWord = ""
     private var myShop: [Shop] = []
     private var myTotal: Int = 0
+    private var myPage: Int = 0
     let apiManager = ApiManager()
     override func loadView() {
         view = searchedView

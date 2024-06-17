@@ -43,14 +43,14 @@ class SettingTableViewCell: UITableViewCell {
         }
     }
     
-    func setLikeList() {
+    func setLikeList(count: Int) {
         subLabel.text = "의 상품"
         contentView.addSubview(subLabel)
         subLabel.snp.makeConstraints { make in
             make.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(16)
             make.centerY.equalToSuperview()
         }
-        countLabel.text = "18개"
+        countLabel.text = "\(count)개"
         contentView.addSubview(countLabel)
         countLabel.snp.makeConstraints { make in
             make.trailing.equalTo(subLabel.snp.leading)

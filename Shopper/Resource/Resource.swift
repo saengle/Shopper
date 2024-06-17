@@ -41,29 +41,14 @@ enum Resource {
             case big
             case selected
             case unSelected
-            
-            
         }
         enum ImageList: String, CaseIterable {
             case profile = "profile_0"
-            //            case profile_1
-            //            case profile_2
-            //            case profile_3
-            //            case profile_4
-            //            case profile_5
-            //            case profile_6
-            //            case profile_7
-            //            case profile_8
-            //            case profile_9
-            //            case profile_10
-            //            case profile_11
-            
             var list: [String] { // 인스턴스 연산 프로퍼티
                 switch self {
                 case .profile:
                     return [ "profile_0", "profile_1", "profile_3", "profile_4", "profile_5", "profile_6", "profile_7", "profile_8", "profile_9", "profile_10", "profile_11" ]
                 }
-                
             }
         }
     }
@@ -75,15 +60,4 @@ enum settingOptions: String, CaseIterable {
     case qna = "버전정보"
     case alarm = "알람 설정"
     case withdraw = "탈퇴하기"
-//    var subOptions: [String] { // 인스턴스 연산 프로퍼티
-//        switch self {
-//        case .total:
-//            return ["공지사항", "실험실", "버전정보"]
-//        case .personal:
-//            return ["개인/보안", "알림", "채팅", "멀티프로필"]
-//        case .others:
-//            return ["고객센터/도움말"]
-//        }
-//    }
-    
 }

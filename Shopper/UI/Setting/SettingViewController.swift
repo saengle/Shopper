@@ -35,7 +35,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
         cell.textLabel?.text = settingOptions.allCases[indexPath.row].rawValue
         // Data - likeList 추가해야함.
-        if indexPath.row == 0 {cell.setLikeList()}
+        if indexPath.row == 0 {cell.setLikeList(count: User.likeList.count )}
         return cell
     }
     
@@ -58,6 +58,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SettingViewController {
+    // MARK:  유저디폴츠 데이터 전부 삭제
     private func resetDefaults() {
         let defaults = UserDefaults.standard
         let dictionary = defaults.dictionaryRepresentation()

@@ -20,12 +20,12 @@ struct User {
         get { UserDefaults.standard.string(forKey: "signInDay") ?? "" }
         set { UserDefaults.standard.set(newValue, forKey: "signInDay") }
     }
-    static var searchedList: [Any]? {
-        get { UserDefaults.standard.array(forKey: "searchedList") ?? [] }
+    static var searchedList: [String] {
+        get { UserDefaults.standard.stringArray(forKey: "searchedList") ?? [] }
         set { UserDefaults.standard.set(newValue, forKey: "searchedList") }
     }
-    static var likeList: [Any]? {
-        get { UserDefaults.standard.array(forKey: "likeList") ?? [] }
+    static var likeList: [String] {
+        get { UserDefaults.standard.stringArray(forKey: "likeList") ?? [] }
         set { UserDefaults.standard.set(newValue, forKey: "likeList") }
     }
     static var userName: String {
