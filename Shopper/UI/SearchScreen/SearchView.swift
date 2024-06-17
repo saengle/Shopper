@@ -30,6 +30,7 @@ class SearchView: UIView {
         let lb = UILabel()
         v.addSubview(lb)
         lb.text = "최근 검색어가 없어요"
+        lb.font = Resource.Font.bold16
         lb.snp.makeConstraints { make in
             make.top.equalTo(iv.snp.bottom)
             make.centerX.equalToSuperview()
@@ -82,11 +83,10 @@ extension SearchView {
     private func configureHierachy() {
         self.addSubview(searchBar)
         self.addSubview(underLine)
-        self.addSubview(noSearchView)
         self.addSubview(tableView)
         self.addSubview(recentSearchLabel)
         self.addSubview(removeButton)
-        
+        self.addSubview(noSearchView)
     }
     private func configureLayout() {
         searchBar.snp.makeConstraints { make in
@@ -110,7 +110,7 @@ extension SearchView {
         }
         
         noSearchView.snp.makeConstraints { make in
-            make.top.equalTo(removeButton.snp.bottom).offset(8)
+            make.top.equalTo(underLine.snp.bottom)
             make.horizontalEdges.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         tableView.snp.makeConstraints { make in

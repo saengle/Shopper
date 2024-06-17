@@ -20,32 +20,38 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Shopper \(User.userName)님!"
-        guard let list = User.searchedList as? [String] else { return }
-        mySearchedList = list
+        mySearchedList = User.searchedList
         searchView.tableView.delegate = self
         searchView.tableView.dataSource = self
         searchView.tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
         searchView.searchBar.delegate = self
         searchView.removeButton.addTarget(self, action: #selector(allDeleteClicked), for: .touchUpInside)
+        self.noSearchViewState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let list = User.searchedList as? [String] {
-            mySearchedList = list
-        }
+        mySearchedList = User.searchedList
+        self.noSearchViewState()
         self.searchView.tableView.reloadData()
     }
 }
 extension SearchViewController {
+    private func noSearchViewState() {
+        if mySearchedList.count == 0 { searchView.noSearchView.isHidden = false }
+        else { searchView.noSearchView.isHidden = true}
+    }
+    
     @objc private func deleteButtonClicked(_ sender: UIButton) {
         mySearchedList.remove(at: sender.tag)
         User.searchedList = mySearchedList
+        noSearchViewState()
         self.searchView.tableView.reloadData()
     }
     
     @objc private func allDeleteClicked() {
         mySearchedList.removeAll()
         User.searchedList = mySearchedList
+        noSearchViewState()
         self.searchView.tableView.reloadData()
     }
 }
