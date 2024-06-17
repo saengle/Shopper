@@ -100,3 +100,9 @@ class SortButton: UIButton {
     }
 }
 
+/* 
+ setTitle(title, for: .normal)
+ var configuration = UIButton.Configuration.filled()
+ configuration.cornerStyle = .capsule
+ self.configuration = configuration
+ */
