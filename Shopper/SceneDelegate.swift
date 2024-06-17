@@ -22,6 +22,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let nav = UINavigationController(rootViewController: vc)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
+//
+//        let data = UserDefaults.standard.bool(forKey: "isLogedIn")
+//        guard let scene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(windowScene: scene)
+//        
+//        if data {
+//             let vc = MainViewController()
+//            let vc = TabbarController()
+//            let nvc = UINavigationController(rootViewController: vc)
+//            window?.rootViewController = nvc   // entrypoint
+//        } else {
+//            let vc = SignInViewController()
+//            let vc = TabbarController()
+//            let nvc = UINavigationController(rootViewController: vc)
+//            window?.rootViewController = nvc   // entrypoint
+//        }
+//        
+//        window?.makeKeyAndVisible()  //show
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

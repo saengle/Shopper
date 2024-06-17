@@ -42,6 +42,7 @@
 		8EF74DB72C2025D500BB0233 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DB62C2025D500BB0233 /* ItemDetailViewController.swift */; };
 		8EF74DB92C20262000BB0233 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DB82C20262000BB0233 /* ItemDetailView.swift */; };
 		8EF74DBC2C20350400BB0233 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DBB2C20350400BB0233 /* User.swift */; };
+		8EF74DBF2C2037EB00BB0233 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DBE2C2037EB00BB0233 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		8EF74DB62C2025D500BB0233 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		8EF74DB82C20262000BB0233 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		8EF74DBB2C20350400BB0233 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8EF74DBE2C2037EB00BB0233 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		8E86E2552C1B0EF5009FE3AB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8EF74DBD2C2037D700BB0233 /* TabBar */,
 				8EF74DB52C2025AF00BB0233 /* ItemDetailScreen */,
 				8EA107B52C1F121100CAC8FB /* SearchedScreen */,
 				8EA107A82C1C451200CAC8FB /* SearchScreen */,
@@ -243,6 +246,14 @@
 				8EF74DBB2C20350400BB0233 /* User.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		8EF74DBD2C2037D700BB0233 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8EF74DBE2C2037EB00BB0233 /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +366,7 @@
 				8E86E25A2C1B0F22009FE3AB /* OnBoardViewController.swift in Sources */,
 				8EA107B22C1EFB7A00CAC8FB /* SecureAPI.swift in Sources */,
 				8EA107BB2C1F37B700CAC8FB /* SearchedView.swift in Sources */,
+				8EF74DBF2C2037EB00BB0233 /* TabBarController.swift in Sources */,
 				8E86E23F2C1AF1EE009FE3AB /* SceneDelegate.swift in Sources */,
 				8E86E2722C1B320C009FE3AB /* EditProfileViewController.swift in Sources */,
 			);
