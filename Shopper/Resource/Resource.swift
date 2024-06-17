@@ -68,3 +68,22 @@ enum Resource {
         }
     }
 }
+
+enum settingOptions: String, CaseIterable {
+    case myList = "나의 장바구니 목록"
+    case offenQuestion = "실험실"
+    case qna = "버전정보"
+    case alarm = "알람 설정"
+    case withdraw = "탈퇴하기"
+//    var subOptions: [String] { // 인스턴스 연산 프로퍼티
+//        switch self {
+//        case .total:
+//            return ["공지사항", "실험실", "버전정보"]
+//        case .personal:
+//            return ["개인/보안", "알림", "채팅", "멀티프로필"]
+//        case .others:
+//            return ["고객센터/도움말"]
+//        }
+//    }
+    
+}

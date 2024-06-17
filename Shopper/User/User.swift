@@ -13,7 +13,7 @@ struct Guest {
 }
 
 struct User {
-    
+    let signInDay: String
     let searchedList: [Int]
     let likeList: [Int]
     let userName: String
