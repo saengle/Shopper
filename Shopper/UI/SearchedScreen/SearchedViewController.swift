@@ -29,6 +29,7 @@ class SearchedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         callApi(query: User.keyWord, sort: mySort)
+        addTargetSortButton()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,6 +63,31 @@ extension SearchedViewController {
                 element.backgroundColor = Resource.MyColors.white
             }
         }
+    }
+    
+    private func addTargetSortButton() {
+        searchedView.buttonList.forEach{$0.addTarget(self, action: #selector(sortButtonClicked), for: .touchUpInside)}
+    }
+
+    @objc private func sortButtonClicked(_ sender: UIButton) {
+        guard let tempString: String = sender.titleLabel?.text else {return}
+        let mySortValue = tempString.replacingOccurrences(of: "   ", with: "")
+        var tempSort = Sort.sim
+        switch mySortValue {
+        case Sort.sim.rawValue:
+            tempSort = Sort.sim
+        case Sort.date.rawValue:
+            tempSort = Sort.date
+        case Sort.dsc.rawValue:
+            tempSort = Sort.dsc
+        case Sort.asc.rawValue:
+            tempSort = Sort.asc
+        default:
+            print("Sort변환중 문제가 발생했습니다.")
+        }
+        mySort = tempSort
+        self.myShop.removeAll()
+        callApi(query: User.keyWord, sort: mySort)
     }
     
     @objc private func addListButtonClicked(_ sender: UIButton) {
