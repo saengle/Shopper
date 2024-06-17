@@ -82,8 +82,7 @@ extension SetProfileViewController {
             // 씬 딜리게이트 파일에 접근 ( 씬 딜리게이트 파일 안에 들어가면 윈도우를 찾아 올 수 있음.)
             let sceneDelegate = windowScene?.delegate as? SceneDelegate
             let vc = TabbarController()
-            let nvc = UINavigationController(rootViewController: vc)
-            sceneDelegate?.window?.rootViewController = nvc   // entrypoint
+            sceneDelegate?.window?.rootViewController = vc   // entrypoint
             sceneDelegate?.window?.makeKeyAndVisible()  //show
         }
     }

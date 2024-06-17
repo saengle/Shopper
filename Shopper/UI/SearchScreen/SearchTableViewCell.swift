@@ -21,6 +21,7 @@ class SearchTableViewCell: UITableViewCell {
         configureLayout()
         removeButton.setImage(UIImage(systemName: "xmark"), for: .normal)
         removeButton.tintColor = Resource.MyColors.black
+        removeButton.isEnabled = true
         watchImage.image = UIImage(systemName: "clock")
         watchImage.tintColor = Resource.MyColors.black
         titleLabel.text = "테스트용 입니다."

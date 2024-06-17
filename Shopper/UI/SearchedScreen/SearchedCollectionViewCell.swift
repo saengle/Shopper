@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 
 class SearchedCollectionViewCell: UICollectionViewCell {
     
@@ -21,7 +22,7 @@ class SearchedCollectionViewCell: UICollectionViewCell {
     let mallNameLabel = {
         let lb = UILabel()
         lb.font = Resource.Font.normal13
-        lb.textColor = Resource.MyColors.lightGray
+        lb.textColor = Resource.MyColors.gray
         return lb
     }()
     
@@ -54,12 +55,33 @@ class SearchedCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(data: Item, like: Bool) {
-        mallNameLabel.text = data.mallName
-        titleLabel.text = data.title
+        
+        mallNameLabel.text = data.mallName ?? ""
+        titleLabel.text = data.title ?? ""
         // MARK:  3자리 끊기
-//        let formattedLP = data.lprice.
-        lpriceLabel.text = data.lprice
+        if let requestIntValue: Int = Int(data.lprice ?? "0") {
+            let numberFormatter: NumberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let result: String = numberFormatter.string(for: requestIntValue)!
+            lpriceLabel.text = "\(result)원"
+        }
+        
         setAddListButtonImage(like: like)
+        if let imagePath = data.image {
+            if let url = URL(string: "\(String(describing: imagePath))") {
+                let processor = DownsamplingImageProcessor(size:  mainImageView.bounds.size)
+                |> RoundCornerImageProcessor(cornerRadius: 5)
+                mainImageView.kf.indicatorType = .activity
+                mainImageView.kf.setImage(
+                    with: url,
+                    placeholder: UIImage(named: "placeholderImage"),
+                    options: [.processor(processor),
+                              .scaleFactor(UIScreen.main.scale),
+                              .transition(.fade(1)),
+                              .cacheOriginalImage])
+                
+            }
+        }
         
     }
     

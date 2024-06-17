@@ -32,6 +32,18 @@ struct User {
         get { UserDefaults.standard.string(forKey: "userName") ?? "" }
         set { UserDefaults.standard.set(newValue, forKey: "userName") }
     }
+    static var keyWord: String {
+        get { UserDefaults.standard.string(forKey: "keyWord") ?? "" }
+        set { UserDefaults.standard.set(newValue, forKey: "keyWord") }
+    }
+    static var detailKeyWord: String {
+        get { UserDefaults.standard.string(forKey: "keyWord") ?? "" }
+        set { UserDefaults.standard.set(newValue, forKey: "keyWord") }
+    }
+    static var link: String {
+        get { UserDefaults.standard.string(forKey: "link") ?? "" }
+        set { UserDefaults.standard.set(newValue, forKey: "link") }
+    }
 }
 
 

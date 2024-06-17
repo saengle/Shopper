@@ -18,8 +18,7 @@ class ItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = .black
-        navigationItem.title = "기계식 키보드"
-        
-        itemDetailView.configureView(url: "https://www.naver.com")
+        navigationItem.title = User.detailKeyWord
+        itemDetailView.configureView(url: User.link)
     }
 }

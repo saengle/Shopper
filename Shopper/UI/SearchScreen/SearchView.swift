@@ -13,6 +13,7 @@ class SearchView: UIView {
     let searchBar = {
         let sb = UISearchBar()
         sb.placeholder = "브랜드, 상품 등을 입력하세요."
+        sb.searchBarStyle = .minimal
         return sb
     }()
     
@@ -89,7 +90,8 @@ extension SearchView {
     }
     private func configureLayout() {
         searchBar.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+            make.top.equalTo(self.safeAreaLayoutGuide)
+            make.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(8)
             make.height.equalTo(44)
         }
         underLine.snp.makeConstraints { make in
