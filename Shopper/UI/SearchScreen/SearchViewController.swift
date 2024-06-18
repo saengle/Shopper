@@ -31,6 +31,7 @@ class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         mySearchedList = User.searchedList
+        self.searchView.searchBar.text = ""
         self.noSearchViewState()
         self.searchView.tableView.reloadData()
     }
@@ -61,8 +62,10 @@ extension SearchViewController: UISearchBarDelegate {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         let vc = SearchedViewController()
         User.keyWord = searchBar.text!
-        mySearchedList.insert((searchBar.text!), at: 0)
-        User.searchedList = mySearchedList
+        if mySearchedList.contains(searchBar.text!) == false {
+            mySearchedList.insert((searchBar.text!), at: 0)
+            User.searchedList = mySearchedList
+        }
         self.navigationController?.pushViewController((vc), animated: true)
     }
 }
