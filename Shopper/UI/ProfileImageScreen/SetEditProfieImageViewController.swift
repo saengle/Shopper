@@ -51,26 +51,11 @@ extension SetEditProfieImageViewController: UICollectionViewDelegate, UICollecti
     }
     // MARK:  선택 메서드
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileImageCell.identifier, for: indexPath) as? ProfileImageCell {
             myProfile = Resource.Image.ImageList.allCases[0].list[indexPath.row]
             User.userProfile = Resource.Image.ImageList.allCases[0].list[indexPath.row]
-            //아래 메서드 살리면 전체 리로드 -> 부분 리로드
-//            collectionView.reloadItems(at: [indexPath])
             setEditView.setMainImage(image: myProfile)
             collectionView.reloadData()
         }
     }
-//    // MARK:  선택 풀리는 메서드 아예 실행이 안돼... 왜지..
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        print("실행이 안된다 ?")
-//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileImageCell.identifier, for: indexPath) as? ProfileImageCell {
-////            cell.makeCellImage(size: Resource.Image.ImageSize.unSelected, style: Resource.Image.ImageList.allCases[0].list[indexPath.row])
-//            print(indexPath, "를 청소해줘야하는데")
-//            collectionView.reloadItems(at: [indexPath])
-//        }
-//        if let cell = collectionView.cellForItem(at: indexPath) as? ProfileImageCell {
-//                   print("왜 안돼")
-//               }
-//    }
 }

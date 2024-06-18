@@ -14,15 +14,6 @@ import SnapKit
 class SetEditProfileImageView: UIView {
     
     let profileImageView = ProfileImageButton(size: Resource.Image.ImageSize.big)
-//    let profileImageListView : [ProfileImageButton] = {
-//        var list = [ProfileImageButton]()
-//        for i in 0...10 {
-//            list.append(ProfileImageButton(style: Resource.Image.ImageSize.unSelected))
-////            list[i].setImage(Resource.Image.[i], for: .normal)
-//        }
-//        
-//        return list
-//    }()
     
     lazy var profileCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     
@@ -38,12 +29,10 @@ class SetEditProfileImageView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
-
+        self.backgroundColor = Resource.MyColors.white
         configureHierachy()
         configureLayout()
         profileCollectionView.isScrollEnabled = false
-//        profileCollectionView.backgroundColor = .brown
     }
     
     required init?(coder: NSCoder) {
