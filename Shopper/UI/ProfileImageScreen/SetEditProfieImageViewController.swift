@@ -19,7 +19,12 @@ class SetEditProfieImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         myProfile = User.userProfile
-        navigationItem.title = "PROFILE SETTING"
+        if User.isUser {
+            navigationItem.title = "EDIT PROFILE"
+        } else {
+            navigationItem.title = "PROFILE SETTING"
+        }
+        
         navigationController?.navigationBar.tintColor = .black
         setEditView.profileCollectionView.register(ProfileImageCell.self, forCellWithReuseIdentifier: ProfileImageCell.identifier)
         setEditView.profileCollectionView.dataSource = self

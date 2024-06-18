@@ -19,11 +19,9 @@ class SetProfileViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        navigationItem.title = "PROFILE SETTING"
+        judgeSetorEdit()
         navigationController?.navigationBar.tintColor = .black
         ButtonsAddTargets()
-        self.setRandomImage(image: myProfile)
-        self.profileView.setMainImage(image: myProfile)
         profileView.textField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
     }
     // 프로필사진 고르고 돌아올 때 이미지 세팅
@@ -36,6 +34,28 @@ class SetProfileViewController: UIViewController {
 }
 
 extension SetProfileViewController {
+    private func judgeSetorEdit() {
+        if User.isUser {//유저이면
+            navigationItem.title = "EDIT PROFILE"
+            let navSaveItem = {
+                let item = UIBarButtonItem()
+                item.title = "저장"
+                
+                return item
+            }()
+            self.profileView.textField.text = User.userName
+            self.profileView.setMainImage(image: myProfile)
+            self.profileView.doneButton.isHidden = true
+            self.navigationItem.rightBarButtonItem = navSaveItem
+            self.navigationItem.rightBarButtonItem?.target = self
+            self.navigationItem.rightBarButtonItem?.action = #selector(doneButtonClicked)
+        } else {//유저가 아니면
+            self.setRandomImage(image: myProfile)
+            self.profileView.setMainImage(image: myProfile)
+            self.profileView.doneButton.isHidden = false
+            navigationItem.title = "PROFILE SETTING"
+        }
+    }
     //TextField Validation & ProfileView Label Change
     @objc func textFieldEditingChanged(_ sender: Any?) {
         if let text = self.profileView.textField.text {

@@ -73,6 +73,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SettingHeaderView.identifier) as? SettingHeaderView else {return UITableViewHeaderFooterView()}
         header.WholeButton.addTarget(self, action: #selector(setProfileClicked), for: .touchUpInside)
+        header.profileImage.isEnabled = true
         header.dateLabel.text = "\(User.signInDay) 가입"
         header.nameLabel.text = User.userName
         header.profileImage.setImage(UIImage(named: User.userProfile), for: .normal)
@@ -83,7 +84,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
 extension SettingViewController {
     
     @objc private func setProfileClicked() {
-        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationController?.pushViewController(SetProfileViewController(), animated: true)
     }
     // MARK:  유저디폴츠 데이터 전부 삭제
     private func resetDefaults() {
