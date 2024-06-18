@@ -17,19 +17,19 @@ class ItemDetailViewController: UIViewController {
         button.isEnabled = true
         return button
     }()
-    lazy var nowId = ""
+    var nowId = ""
     override func loadView() {
         view = itemDetailView
-        nowId = User.nowId
-        print(nowId)
-        makeLikeButton()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nowId = User.nowId
         navigationController?.navigationBar.tintColor = .black
-        navigationItem.title = User.detailKeyWord
+        let mySortValue = User.detailKeyWord.replacingOccurrences(of: "<b>", with: "")
+        navigationItem.title = mySortValue.replacingOccurrences(of: "</b>", with: "")
         navigationItem.rightBarButtonItem = rightButton
+        makeLikeButton()
         itemDetailView.configureView(url: User.link)
     }
 }
@@ -60,6 +60,9 @@ extension ItemDetailViewController {
                 // 이미지 이상하게 나오는거 수정 필요.
                 rightButton.image = UIImage(named: "like_unselected")
             }
+        }
+        if User.likeList.count == 0 {
+            rightButton.image = UIImage(named: "like_unselected")
         }
     }
 }
