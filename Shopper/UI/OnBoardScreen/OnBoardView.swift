@@ -30,7 +30,6 @@ class OnBoardView: UIView {
     let startButton = BigButton(title: "시작하기")
     let nameLabel = {
         let lb = UILabel()
-        lb.text = "김생근"
         lb.font = .boldSystemFont(ofSize: 29)
         lb.textColor = Resource.MyColors.primary
         return lb

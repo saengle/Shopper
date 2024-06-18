@@ -41,7 +41,6 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
         cell.textLabel?.text = settingOptions.allCases[indexPath.row].rawValue
-        // Data - likeList 추가해야함.
         if indexPath.row == 0 {cell.setLikeList(count: User.likeList.count )}
         return cell
     }
@@ -82,7 +81,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SettingViewController {
-    
+    // 화면으로 이동
     @objc private func setProfileClicked() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.pushViewController(SetProfileViewController(), animated: true)

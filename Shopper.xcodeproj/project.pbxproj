@@ -25,7 +25,6 @@
 		8E86E2702C1B31F5009FE3AB /* SetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E26F2C1B31F5009FE3AB /* SetProfileViewController.swift */; };
 		8E86E2722C1B320C009FE3AB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2712C1B320C009FE3AB /* EditProfileViewController.swift */; };
 		8E86E2742C1B3214009FE3AB /* SetEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */; };
-		8E86E2762C1B3315009FE3AB /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2752C1B3315009FE3AB /* ProfileImageView.swift */; };
 		8E86E2792C1B64ED009FE3AB /* SetEditProfieImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2782C1B64ED009FE3AB /* SetEditProfieImageViewController.swift */; };
 		8E86E27B2C1B6547009FE3AB /* SetEditProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E27A2C1B6547009FE3AB /* SetEditProfileImageView.swift */; };
 		8EA107A42C1C265E00CAC8FB /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107A32C1C265E00CAC8FB /* ProfileImageCell.swift */; };
@@ -46,7 +45,6 @@
 		8EF74DC22C2038BB00BB0233 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC12C2038BB00BB0233 /* SettingViewController.swift */; };
 		8EF74DC42C2038D800BB0233 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC32C2038D800BB0233 /* SettingView.swift */; };
 		8EF74DC62C20558500BB0233 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC52C20558500BB0233 /* SettingTableViewCell.swift */; };
-		8EF74DC82C206A9700BB0233 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC72C206A9700BB0233 /* UIButton+Extension.swift */; };
 		8EF74DCA2C207BB000BB0233 /* TextValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC92C207BB000BB0233 /* TextValidation.swift */; };
 		8EF74DCC2C20FAAF00BB0233 /* SettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DCB2C20FAAF00BB0233 /* SettingHeaderView.swift */; };
 /* End PBXBuildFile section */
@@ -67,7 +65,6 @@
 		8E86E26F2C1B31F5009FE3AB /* SetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileViewController.swift; sourceTree = "<group>"; };
 		8E86E2712C1B320C009FE3AB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfileView.swift; sourceTree = "<group>"; };
-		8E86E2752C1B3315009FE3AB /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		8E86E2782C1B64ED009FE3AB /* SetEditProfieImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfieImageViewController.swift; sourceTree = "<group>"; };
 		8E86E27A2C1B6547009FE3AB /* SetEditProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfileImageView.swift; sourceTree = "<group>"; };
 		8EA107A32C1C265E00CAC8FB /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
@@ -88,7 +85,6 @@
 		8EF74DC12C2038BB00BB0233 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8EF74DC32C2038D800BB0233 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		8EF74DC52C20558500BB0233 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
-		8EF74DC72C206A9700BB0233 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		8EF74DC92C207BB000BB0233 /* TextValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValidation.swift; sourceTree = "<group>"; };
 		8EF74DCB2C20FAAF00BB0233 /* SettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,7 +154,7 @@
 		8E86E2552C1B0EF5009FE3AB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				8EF74DC02C2038B100BB0233 /* Setting */,
+				8EF74DC02C2038B100BB0233 /* SettingScreen */,
 				8EF74DBD2C2037D700BB0233 /* TabBar */,
 				8EF74DB52C2025AF00BB0233 /* ItemDetailScreen */,
 				8EA107B52C1F121100CAC8FB /* SearchedScreen */,
@@ -184,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				8E86E26C2C1B1506009FE3AB /* Buttons.swift */,
-				8E86E2752C1B3315009FE3AB /* ProfileImageView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -213,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				8EA107A62C1C294100CAC8FB /* Identifier+Extension.swift */,
-				8EF74DC72C206A9700BB0233 /* UIButton+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -271,7 +265,7 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		8EF74DC02C2038B100BB0233 /* Setting */ = {
+		8EF74DC02C2038B100BB0233 /* SettingScreen */ = {
 			isa = PBXGroup;
 			children = (
 				8EF74DC12C2038BB00BB0233 /* SettingViewController.swift */,
@@ -279,7 +273,7 @@
 				8EF74DC52C20558500BB0233 /* SettingTableViewCell.swift */,
 				8EF74DCB2C20FAAF00BB0233 /* SettingHeaderView.swift */,
 			);
-			path = Setting;
+			path = SettingScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,12 +378,10 @@
 				8EF74DCC2C20FAAF00BB0233 /* SettingHeaderView.swift in Sources */,
 				8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */,
 				8E86E23D2C1AF1EE009FE3AB /* AppDelegate.swift in Sources */,
-				8E86E2762C1B3315009FE3AB /* ProfileImageView.swift in Sources */,
 				8EA107B02C1EFB6C00CAC8FB /* ApiManager.swift in Sources */,
 				8E86E26D2C1B1506009FE3AB /* Buttons.swift in Sources */,
 				8EA107AA2C1DD96500CAC8FB /* SearchViewController.swift in Sources */,
 				8E86E2702C1B31F5009FE3AB /* SetProfileViewController.swift in Sources */,
-				8EF74DC82C206A9700BB0233 /* UIButton+Extension.swift in Sources */,
 				8EF74DC42C2038D800BB0233 /* SettingView.swift in Sources */,
 				8E86E2792C1B64ED009FE3AB /* SetEditProfieImageViewController.swift in Sources */,
 				8EA107BD2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift in Sources */,
