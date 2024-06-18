@@ -14,6 +14,7 @@ class SearchedViewController: UIViewController {
     var likeList = [String]()
     var mySort = Sort.sim
     private var myShop: [Shop] = []
+    private var myItems: [Item] = []
     private var myTotal: Int = 0
     private var myPage: Int = 1
     let apiManager = ApiManager()
@@ -44,6 +45,8 @@ extension SearchedViewController {
             case .success(let shop):
                 guard let shop = shop as? Shop else { return }
                 self.myShop.append(contentsOf: [shop])
+                guard let newItems = shop.items else { return }
+                self.myItems.append(contentsOf: newItems)
                 self.searchedView.collectionView.reloadData()
                 self.myTotal = self.myShop.first?.total ?? 0
                 // MARK:  3자리 끊기
@@ -88,11 +91,13 @@ extension SearchedViewController {
         }
         mySort = tempSort
         self.myShop.removeAll()
+        self.myItems.removeAll()
+        self.myPage = 1
         callApi(query: User.keyWord, sort: mySort)
     }
     
     @objc private func addListButtonClicked(_ sender: UIButton) {
-        guard let id = self.myShop.first?.items?[sender.tag].productID else {return}
+        guard let id = myItems[sender.tag].productID else {return}
         // 라이크리스트가 id를 갖고있으면 (삭제)
         if likeList.contains(id) {
             //인덱스 찾기
@@ -114,7 +119,7 @@ extension SearchedViewController: UICollectionViewDataSourcePrefetching {
         print("Prefetch \(indexPaths)")
         for item in indexPaths {
             // 현재 스크롤이 마지막에서 2번째를 보고있고, isEnd가 아닐때면 추가검색
-            guard let count = myShop.first?.items?.count else {return}
+             let count = myItems.count
             if count - 4 == item.row && myPage <= myTotal {
                 print(count)
                 print(myPage)
@@ -130,12 +135,12 @@ extension SearchedViewController: UICollectionViewDataSourcePrefetching {
 }
 extension SearchedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myShop.first?.items?.count ?? 0
+        return myItems.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchedCollectionViewCell.identifier, for: indexPath) as? SearchedCollectionViewCell else { return UICollectionViewCell()}
-        guard let items = self.myShop.first?.items?[indexPath.row] else { return cell }
+         let items = self.myItems[indexPath.row]
         cell.configureCell(data: items, like: false)
         cell.addListButton.tag = indexPath.row
         cell.addListButton.addTarget(self, action: #selector(addListButtonClicked), for: .touchUpInside)
@@ -149,12 +154,12 @@ extension SearchedViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let link = self.myShop.first?.items?[indexPath.row].link else { return }
+        guard let link = myItems[indexPath.row].link else { return }
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         User.link = link
-        guard let keyWord = self.myShop.first?.items?[indexPath.row].title else { return }
+        guard let keyWord = myItems[indexPath.row].title else { return }
         User.detailKeyWord = keyWord
-        guard let id = self.myShop.first?.items?[indexPath.row].productID else { return }
+        guard let id = myItems[indexPath.row].productID else { return }
         User.nowId = id
         let vc = ItemDetailViewController()
         self.navigationController?.pushViewController((vc), animated: true)
