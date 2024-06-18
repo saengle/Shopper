@@ -15,3 +15,6 @@ extension UITableViewCell {
     static let identifier = String(describing: UITableViewCell.self)
 }
 
+extension UITableViewHeaderFooterView {
+    static let identifier = String(describing: UITableViewHeaderFooterView.self)
+}

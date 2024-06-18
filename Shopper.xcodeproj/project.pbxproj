@@ -48,6 +48,7 @@
 		8EF74DC62C20558500BB0233 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC52C20558500BB0233 /* SettingTableViewCell.swift */; };
 		8EF74DC82C206A9700BB0233 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC72C206A9700BB0233 /* UIButton+Extension.swift */; };
 		8EF74DCA2C207BB000BB0233 /* TextValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DC92C207BB000BB0233 /* TextValidation.swift */; };
+		8EF74DCC2C20FAAF00BB0233 /* SettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DCB2C20FAAF00BB0233 /* SettingHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		8EF74DC52C20558500BB0233 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		8EF74DC72C206A9700BB0233 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		8EF74DC92C207BB000BB0233 /* TextValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValidation.swift; sourceTree = "<group>"; };
+		8EF74DCB2C20FAAF00BB0233 /* SettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 				8EF74DC12C2038BB00BB0233 /* SettingViewController.swift */,
 				8EF74DC32C2038D800BB0233 /* SettingView.swift */,
 				8EF74DC52C20558500BB0233 /* SettingTableViewCell.swift */,
+				8EF74DCB2C20FAAF00BB0233 /* SettingHeaderView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				8EA107A42C1C265E00CAC8FB /* ProfileImageCell.swift in Sources */,
 				8EF74DB92C20262000BB0233 /* ItemDetailView.swift in Sources */,
 				8EA107AC2C1DD97C00CAC8FB /* SearchView.swift in Sources */,
+				8EF74DCC2C20FAAF00BB0233 /* SettingHeaderView.swift in Sources */,
 				8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */,
 				8E86E23D2C1AF1EE009FE3AB /* AppDelegate.swift in Sources */,
 				8E86E2762C1B3315009FE3AB /* ProfileImageView.swift in Sources */,

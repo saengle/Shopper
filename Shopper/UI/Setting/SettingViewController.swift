@@ -22,6 +22,9 @@ class SettingViewController: UIViewController {
         settingView.tableView.dataSource = self
         settingView.tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
         settingView.tableView.rowHeight = 52
+        settingView.tableView.register(SettingHeaderView.self, forHeaderFooterViewReuseIdentifier: SettingHeaderView.identifier)
+        settingView.tableView.sectionHeaderHeight = 120
+        settingView.tableView.isScrollEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,14 +70,21 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        <#code#>
-//    }
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SettingHeaderView.identifier) as? SettingHeaderView else {return UITableViewHeaderFooterView()}
+        header.WholeButton.addTarget(self, action: #selector(setProfileClicked), for: .touchUpInside)
+        header.dateLabel.text = "\(User.signInDay) 가입"
+        header.nameLabel.text = User.userName
+        header.profileImage.setImage(UIImage(named: User.userProfile), for: .normal)
+        return header
+    }
 }
 
 extension SettingViewController {
+    
+    @objc private func setProfileClicked() {
+        
+    }
     // MARK:  유저디폴츠 데이터 전부 삭제
     private func resetDefaults() {
         let defaults = UserDefaults.standard

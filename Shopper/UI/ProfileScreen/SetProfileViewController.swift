@@ -70,7 +70,7 @@ extension SetProfileViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.pushViewController(SetEditProfieImageViewController(), animated: true)
     }
-    
+    // MARK:  가입버튼 클릭
     @objc private func doneButtonClicked() {
 
         // UI어플리케이션에서 첫번째 씬을 찾아서 ...
@@ -78,6 +78,10 @@ extension SetProfileViewController {
             User.isUser = true
             User.userName = myProfile
             User.userName = myName
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy. MM. dd"
+            let stringDate = formatter.string(from: Date())
+            User.signInDay = stringDate
             let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
             // 씬 딜리게이트 파일에 접근 ( 씬 딜리게이트 파일 안에 들어가면 윈도우를 찾아 올 수 있음.)
             let sceneDelegate = windowScene?.delegate as? SceneDelegate

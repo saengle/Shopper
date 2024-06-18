@@ -64,7 +64,7 @@ class ProfileImageButton: UIButton {
         }
     }
  
-    func configureLayout(size: Resource.Image.ImageSize) {
+   private func configureLayout(size: Resource.Image.ImageSize) {
         if size == Resource.Image.ImageSize.big {
             self.snp.makeConstraints { make in
                 make.width.height.equalTo(100)
