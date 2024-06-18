@@ -43,7 +43,11 @@ extension SetProfileViewController {
                 
                 return item
             }()
+            // user이면 이미 갖고있던 닉네임 textfield에 입력
             self.profileView.textField.text = User.userName
+            // textValidation진행
+            self.myTextValidation = textValidate(text: self.profileView.textField.text!)
+            self.profileView.changeTextValidationLabel(state: myTextValidation.rawValue)
             self.profileView.setMainImage(image: myProfile)
             self.profileView.doneButton.isHidden = true
             self.navigationItem.rightBarButtonItem = navSaveItem
