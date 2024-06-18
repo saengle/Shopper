@@ -15,7 +15,7 @@ class SearchedViewController: UIViewController {
     var mySort = Sort.sim
     private var myShop: [Shop] = []
     private var myTotal: Int = 0
-    private var myPage: Int = 0
+    private var myPage: Int = 1
     let apiManager = ApiManager()
     override func loadView() {
         view = searchedView
@@ -23,6 +23,7 @@ class SearchedViewController: UIViewController {
         navigationItem.title = User.keyWord
         searchedView.collectionView.delegate = self
         searchedView.collectionView.dataSource = self
+        searchedView.collectionView.prefetchDataSource = self
         searchedView.collectionView.register(SearchedCollectionViewCell.self, forCellWithReuseIdentifier: SearchedCollectionViewCell.identifier)
     }
     
@@ -38,7 +39,7 @@ class SearchedViewController: UIViewController {
 }
 extension SearchedViewController {
     private func callApi(query: String, sort: Sort) {
-        apiManager.callShoppingRequest(query: query, sort: "\(sort)") { result in
+        apiManager.callShoppingRequest(query: query, sort: "\(sort)", start: myPage) { result in
             switch result{
             case .success(let shop):
                 guard let shop = shop as? Shop else { return }
@@ -107,6 +108,25 @@ extension SearchedViewController {
         }
         self.searchedView.collectionView.reloadData()
     }
+}
+extension SearchedViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        print("Prefetch \(indexPaths)")
+        for item in indexPaths {
+            // 현재 스크롤이 마지막에서 2번째를 보고있고, isEnd가 아닐때면 추가검색
+            guard let count = myShop.first?.items?.count else {return}
+            if count - 4 == item.row && myPage <= myTotal {
+                print(count)
+                print(myPage)
+                //추가요청시에 페이지 +1 해서 같은 키워드로 +1 페이지 검색
+                
+                callApi(query: User.keyWord, sort: mySort)
+                myPage += 30
+            }
+        }
+    }
+    
+    
 }
 extension SearchedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

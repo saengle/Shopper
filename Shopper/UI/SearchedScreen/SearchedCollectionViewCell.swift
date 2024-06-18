@@ -57,7 +57,10 @@ class SearchedCollectionViewCell: UICollectionViewCell {
     func configureCell(data: Item, like: Bool) {
         
         mallNameLabel.text = data.mallName ?? ""
-        titleLabel.text = data.title ?? ""
+        guard let tempString: String = data.title else {return}
+        var mySortValue = tempString.replacingOccurrences(of: "<b>", with: "")
+        var filterdString = mySortValue.replacingOccurrences(of: "</b>", with: "")
+        titleLabel.text = filterdString
         // MARK:  3자리 끊기
         if let requestIntValue: Int = Int(data.lprice ?? "0") {
             let numberFormatter: NumberFormatter = NumberFormatter()

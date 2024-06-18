@@ -12,11 +12,11 @@ import Alamofire
 class ApiManager {
     
     
-    func callShoppingRequest(query: String, sort: String, completion: @escaping((Result<Shop, AFError>) -> Void))  {
+    func callShoppingRequest(query: String, sort: String, start: Int, completion: @escaping((Result<Shop, AFError>) -> Void))  {
         
         let parameters: Parameters = ["query": query,
                                       "display": "30",
-                                      "start": "1",
+                                      "start": start,
                                       "sort": sort]
         
         AF.request(SecureAPI.naverShoppingApiUrl, parameters: parameters, headers: SecureAPI.naverApiHeader).responseDecodable(of: Shop.self) { response in
