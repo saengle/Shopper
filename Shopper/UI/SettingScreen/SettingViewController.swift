@@ -47,25 +47,15 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if settingOptions.allCases[indexPath.row] == settingOptions.withdraw {
-            //1. alert 생성
-            let alert = UIAlertController(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화됩니다. 탈퇴 하시겠습니까?", preferredStyle: .alert)
-            //2. action 선언 필요시 handler 사용.
-            let cancel = UIAlertAction(title: "취소", style: .default)
-            let ok = UIAlertAction(title: "확인", style: .destructive, handler: { _ in
+            showAlert(title: "탈퇴하기", messeage: "탈퇴를 하면 데이터가 모두 초기화됩니다. 탈퇴하시겠습니까?") { UIAlertAction in
                 self.resetDefaults()
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-                // 씬 딜리게이트 파일에 접근 ( 씬 딜리게이트 파일 안에 들어가면 윈도우를 찾아 올 수 있음.)
                 let sceneDelegate = windowScene?.delegate as? SceneDelegate
                 let vc = OnBoardViewController()
                 let nvc = UINavigationController(rootViewController: vc)
                 sceneDelegate?.window?.rootViewController = nvc   // entrypoint
                 sceneDelegate?.window?.makeKeyAndVisible()  //show
-            })
-            //3. alert에 action 등록
-            alert.addAction(cancel)
-            alert.addAction(ok)
-            //4. 띄우기
-            present(alert, animated: true)
+            }
         }
     }
     

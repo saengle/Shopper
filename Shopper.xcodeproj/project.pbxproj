@@ -37,6 +37,7 @@
 		8EA107B92C1F37AC00CAC8FB /* SearchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107B82C1F37AC00CAC8FB /* SearchedViewController.swift */; };
 		8EA107BB2C1F37B700CAC8FB /* SearchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107BA2C1F37B700CAC8FB /* SearchedView.swift */; };
 		8EA107BD2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107BC2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift */; };
+		8EDE510F2C29AD7D008CCB43 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE510E2C29AD7D008CCB43 /* UIViewController+Extension.swift */; };
 		8EF74DB72C2025D500BB0233 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DB62C2025D500BB0233 /* ItemDetailViewController.swift */; };
 		8EF74DB92C20262000BB0233 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DB82C20262000BB0233 /* ItemDetailView.swift */; };
 		8EF74DBC2C20350400BB0233 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF74DBB2C20350400BB0233 /* User.swift */; };
@@ -78,6 +79,7 @@
 		8EA107B82C1F37AC00CAC8FB /* SearchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedViewController.swift; sourceTree = "<group>"; };
 		8EA107BA2C1F37B700CAC8FB /* SearchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedView.swift; sourceTree = "<group>"; };
 		8EA107BC2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedCollectionViewCell.swift; sourceTree = "<group>"; };
+		8EDE510E2C29AD7D008CCB43 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		8EF74DB62C2025D500BB0233 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		8EF74DB82C20262000BB0233 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		8EF74DBB2C20350400BB0233 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				8EA107A62C1C294100CAC8FB /* Identifier+Extension.swift */,
+				8EDE510E2C29AD7D008CCB43 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				8E86E2542C1B0B86009FE3AB /* Resource.swift in Sources */,
 				8EA107B72C1F1E8F00CAC8FB /* SearchTableViewCell.swift in Sources */,
 				8EA107A42C1C265E00CAC8FB /* ProfileImageCell.swift in Sources */,
+				8EDE510F2C29AD7D008CCB43 /* UIViewController+Extension.swift in Sources */,
 				8EF74DB92C20262000BB0233 /* ItemDetailView.swift in Sources */,
 				8EA107AC2C1DD97C00CAC8FB /* SearchView.swift in Sources */,
 				8EF74DCC2C20FAAF00BB0233 /* SettingHeaderView.swift in Sources */,
@@ -539,7 +543,7 @@
 				DEVELOPMENT_TEAM = FPYJAG45SA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shopper/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Shopper;
+				INFOPLIST_KEY_CFBundleDisplayName = "김생근";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -572,7 +576,7 @@
 				DEVELOPMENT_TEAM = FPYJAG45SA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shopper/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Shopper;
+				INFOPLIST_KEY_CFBundleDisplayName = "김생근";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
