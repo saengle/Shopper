@@ -48,6 +48,12 @@ struct User {
         get { UserDefaults.standard.string(forKey: "nowId") ?? "" }
         set { UserDefaults.standard.set(newValue, forKey: "nowId") }
     }
+    static func deleteAllUserData() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
 }
-
 

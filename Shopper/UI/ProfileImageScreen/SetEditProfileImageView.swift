@@ -20,7 +20,7 @@ class SetEditProfileImageView: UIView {
     func collectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         let width = UIScreen.main.bounds.width - 32
-        layout.itemSize = CGSize(width: (width - 30) / 4  , height:  (width - 30) / 4  )
+        layout.itemSize = CGSize(width: (width - 30) / 4  , height:  (width - 30) / 4 )
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

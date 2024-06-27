@@ -78,11 +78,7 @@ extension SettingViewController {
     }
     // MARK:  유저디폴츠 데이터 전부 삭제
     private func resetDefaults() {
-        let defaults = UserDefaults.standard
-        let dictionary = defaults.dictionaryRepresentation()
-        dictionary.keys.forEach { key in
-            defaults.removeObject(forKey: key)
-        }
+        User.deleteAllUserData()
     }
 }
 

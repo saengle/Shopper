@@ -31,13 +31,11 @@ class BigButton: UIButton {
 }
 
 // MARK:  프로필 사진이 들어가있는 이미지 버튼
-// isEnabled = false 로 설정했을 때 alpha가 줄어드는거 수정하고싶다.. 
 class ProfileImageButton: UIButton {
     
     init(size: Resource.Image.ImageSize) {
         super.init(frame: .zero)
         setWholeUI(size: size)
-
     }
     
     func setWholeUI( size: Resource.Image.ImageSize) {
@@ -98,10 +96,3 @@ class SortButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-/* 
- setTitle(title, for: .normal)
- var configuration = UIButton.Configuration.filled()
- configuration.cornerStyle = .capsule
- self.configuration = configuration
- */

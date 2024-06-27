@@ -25,7 +25,6 @@ class OnBoardViewController: UIViewController {
     }
     
     @objc func startButtonClicked() {
-        print(#function)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.pushViewController(SetEditProfileViewController(), animated: true)
     }
