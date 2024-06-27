@@ -21,8 +21,7 @@
 		8E86E2662C1B0FB9009FE3AB /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8E86E2652C1B0FB9009FE3AB /* Toast */; };
 		8E86E2692C1B0FCC009FE3AB /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8E86E2682C1B0FCC009FE3AB /* IQKeyboardManagerSwift */; };
 		8E86E26D2C1B1506009FE3AB /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E26C2C1B1506009FE3AB /* Buttons.swift */; };
-		8E86E2702C1B31F5009FE3AB /* SetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E26F2C1B31F5009FE3AB /* SetProfileViewController.swift */; };
-		8E86E2722C1B320C009FE3AB /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2712C1B320C009FE3AB /* EditProfileViewController.swift */; };
+		8E86E2702C1B31F5009FE3AB /* SetEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E26F2C1B31F5009FE3AB /* SetEditProfileViewController.swift */; };
 		8E86E2742C1B3214009FE3AB /* SetEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */; };
 		8E86E2792C1B64ED009FE3AB /* SetEditProfieImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2782C1B64ED009FE3AB /* SetEditProfieImageViewController.swift */; };
 		8E86E27B2C1B6547009FE3AB /* SetEditProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E27A2C1B6547009FE3AB /* SetEditProfileImageView.swift */; };
@@ -63,8 +62,7 @@
 		8E86E2572C1B0F18009FE3AB /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		8E86E2592C1B0F22009FE3AB /* OnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
 		8E86E26C2C1B1506009FE3AB /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		8E86E26F2C1B31F5009FE3AB /* SetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileViewController.swift; sourceTree = "<group>"; };
-		8E86E2712C1B320C009FE3AB /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		8E86E26F2C1B31F5009FE3AB /* SetEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfileViewController.swift; sourceTree = "<group>"; };
 		8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfileView.swift; sourceTree = "<group>"; };
 		8E86E2782C1B64ED009FE3AB /* SetEditProfieImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfieImageViewController.swift; sourceTree = "<group>"; };
 		8E86E27A2C1B6547009FE3AB /* SetEditProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfileImageView.swift; sourceTree = "<group>"; };
@@ -189,8 +187,7 @@
 		8E86E26E2C1B301F009FE3AB /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
-				8E86E26F2C1B31F5009FE3AB /* SetProfileViewController.swift */,
-				8E86E2712C1B320C009FE3AB /* EditProfileViewController.swift */,
+				8E86E26F2C1B31F5009FE3AB /* SetEditProfileViewController.swift */,
 				8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */,
 			);
 			path = ProfileScreen;
@@ -385,7 +382,7 @@
 				8EA107B02C1EFB6C00CAC8FB /* ApiManager.swift in Sources */,
 				8E86E26D2C1B1506009FE3AB /* Buttons.swift in Sources */,
 				8EA107AA2C1DD96500CAC8FB /* SearchViewController.swift in Sources */,
-				8E86E2702C1B31F5009FE3AB /* SetProfileViewController.swift in Sources */,
+				8E86E2702C1B31F5009FE3AB /* SetEditProfileViewController.swift in Sources */,
 				8EF74DC42C2038D800BB0233 /* SettingView.swift in Sources */,
 				8E86E2792C1B64ED009FE3AB /* SetEditProfieImageViewController.swift in Sources */,
 				8EA107BD2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift in Sources */,
@@ -396,7 +393,6 @@
 				8EA107BB2C1F37B700CAC8FB /* SearchedView.swift in Sources */,
 				8EF74DBF2C2037EB00BB0233 /* TabBarController.swift in Sources */,
 				8E86E23F2C1AF1EE009FE3AB /* SceneDelegate.swift in Sources */,
-				8E86E2722C1B320C009FE3AB /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

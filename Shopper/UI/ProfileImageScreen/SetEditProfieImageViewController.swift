@@ -11,7 +11,7 @@ class SetEditProfieImageViewController: UIViewController {
     
     let setEditView = SetEditProfileImageView()
     var myProfile = ""
-    let vc = SetProfileViewController()
+    let vc = SetEditProfileViewController()
     override func loadView() {
         view = setEditView
     }

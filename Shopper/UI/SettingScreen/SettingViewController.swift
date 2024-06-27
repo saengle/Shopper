@@ -74,7 +74,7 @@ extension SettingViewController {
     // 화면으로 이동
     @objc private func setProfileClicked() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        navigationController?.pushViewController(SetProfileViewController(), animated: true)
+        navigationController?.pushViewController(SetEditProfileViewController(), animated: true)
     }
     // MARK:  유저디폴츠 데이터 전부 삭제
     private func resetDefaults() {

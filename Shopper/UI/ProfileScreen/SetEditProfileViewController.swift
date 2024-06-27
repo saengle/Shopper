@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SetProfileViewController: UIViewController {
+class SetEditProfileViewController: UIViewController {
     
     let profileView = SetEditProfileView()
     var myName = ""
@@ -19,7 +19,7 @@ class SetProfileViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        judgeSetorEdit()
+        judgeUser()
         navigationController?.navigationBar.tintColor = .black
         ButtonsAddTargets()
         profileView.textField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
@@ -33,32 +33,39 @@ class SetProfileViewController: UIViewController {
     }
 }
 
-extension SetProfileViewController {
-    private func judgeSetorEdit() {
-        if User.isUser {//유저이면
-            navigationItem.title = "EDIT PROFILE"
-            let navSaveItem = {
-                let item = UIBarButtonItem()
-                item.title = "저장"
-                
-                return item
-            }()
-            // user이면 이미 갖고있던 닉네임 textfield에 입력
-            self.profileView.textField.text = User.userName
-            // textValidation진행
-            self.myTextValidation = textValidate(text: self.profileView.textField.text!)
-            self.profileView.changeTextValidationLabel(state: myTextValidation.rawValue)
-            self.profileView.setMainImage(image: myProfile)
-            self.profileView.doneButton.isHidden = true
-            self.navigationItem.rightBarButtonItem = navSaveItem
-            self.navigationItem.rightBarButtonItem?.target = self
-            self.navigationItem.rightBarButtonItem?.action = #selector(doneButtonClicked)
-        } else {//유저가 아니면
-            self.setRandomImage(image: myProfile)
-            self.profileView.setMainImage(image: myProfile)
-            self.profileView.doneButton.isHidden = false
-            navigationItem.title = "PROFILE SETTING"
+extension SetEditProfileViewController {
+    private func judgeUser() {
+        if User.isUser {//유저이면 Editting뷰
+            laodEditViewETC()
+        } else {//유저가 아니면 Setting 뷰
+            loadSetViewETC()
         }
+    }
+    private func laodEditViewETC() {
+        //유저이면 Editting뷰
+        navigationItem.title = "EDIT PROFILE"
+        let navSaveItem = {
+            let item = UIBarButtonItem()
+            item.title = "저장"
+            return item
+        }()
+        // user이면 이미 갖고있던 닉네임 textfield에 입력
+        self.profileView.textField.text = User.userName
+        // textValidation진행
+        self.myTextValidation = textValidate(text: self.profileView.textField.text!)
+        self.profileView.changeTextValidationLabel(state: myTextValidation.rawValue)
+        self.profileView.setMainImage(image: myProfile)
+        self.profileView.doneButton.isHidden = true
+        self.navigationItem.rightBarButtonItem = navSaveItem
+        self.navigationItem.rightBarButtonItem?.target = self
+        self.navigationItem.rightBarButtonItem?.action = #selector(doneButtonClicked)
+    }
+    private func loadSetViewETC() {
+        //유저가 아니면 Setting 뷰
+        self.setRandomImage(image: myProfile)
+        self.profileView.setMainImage(image: myProfile)
+        self.profileView.doneButton.isHidden = false
+        navigationItem.title = "PROFILE SETTING"
     }
     //TextField Validation & ProfileView Label Change
     @objc func textFieldEditingChanged(_ sender: Any?) {
@@ -79,9 +86,6 @@ extension SetProfileViewController {
         self.myName = text
         return TextValidation.pass
     }
-}
-
-extension SetProfileViewController {
     
     private func ButtonsAddTargets() {
         profileView.profileImageButton.addTarget(self, action: #selector(imageButtonClicked), for: .touchUpInside)
@@ -96,7 +100,10 @@ extension SetProfileViewController {
     }
     // MARK:  가입버튼 클릭
     @objc private func doneButtonClicked() {
-        if User.isUser {
+        saveProfile(isUser: User.isUser)
+    }
+    func saveProfile(isUser: Bool) {
+        if isUser {
             if myTextValidation == TextValidation.pass {
                 User.userName = myProfile
                 User.userName = myName
@@ -120,9 +127,7 @@ extension SetProfileViewController {
             }
         }
     }
-}
 
-extension SetProfileViewController {
     private func setRandomImage(image: String){
         if image == "" {
             myProfile = Resource.Image.ImageList.allCases[0].list[Int.random(in: 0...Resource.Image.ImageList.allCases[0].list.count - 1)]

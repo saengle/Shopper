@@ -65,44 +65,8 @@ class SetEditProfileView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        self.addSubview(profileImageButton)
-        // MARK: 아래 인덱스 수정으로 프로필 사진 바꾸기
-        profileImageButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).inset(16)
-        }
-        self.addSubview(cameraCircleView)
-        self.addSubview(cameraImage)
-        cameraImage.snp.makeConstraints { make in
-            make.trailing.bottom.equalTo(profileImageButton).inset(8)
-        }
-        cameraCircleView.snp.makeConstraints { make in
-            make.center.equalTo(cameraImage.snp.center)
-        }
-        self.addSubview(textField)
-        textField.snp.makeConstraints { make in
-            make.top.equalTo(cameraImage.snp.bottom).offset(16)
-            make.centerX.equalToSuperview()
-            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(32)
-            make.height.equalTo(44)
-        }
-        self.addSubview(lineView)
-        lineView.snp.makeConstraints { make in
-            make.top.equalTo(textField.snp.bottom).offset(4)
-            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(20)
-        }
-        self.addSubview(stateLabel)
-        stateLabel.snp.makeConstraints { make in
-            make.top.equalTo(lineView.snp.bottom).offset(12)
-            make.centerX.equalToSuperview()
-            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(32)
-        }
-        self.addSubview(doneButton)
-        doneButton.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(16)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(stateLabel.snp.bottom).offset(16)
-        }
+        configureHierachy()
+        configureLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -114,6 +78,50 @@ class SetEditProfileView: UIView {
     }
     func changeTextValidationLabel(state: String) {
         stateLabel.text = state
+    }
+    
+    private func configureHierachy() {
+        
+        [profileImageButton, cameraCircleView, cameraImage, textField, lineView, stateLabel, doneButton].forEach{self.addSubview($0)}
+    }
+    
+    private func configureLayout() {
+        // MARK: 아래 인덱스 수정으로 프로필 사진 바꾸기
+        profileImageButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).inset(16)
+        }
+  
+        cameraImage.snp.makeConstraints { make in
+            make.trailing.bottom.equalTo(profileImageButton).inset(8)
+        }
+        cameraCircleView.snp.makeConstraints { make in
+            make.center.equalTo(cameraImage.snp.center)
+        }
+     
+        textField.snp.makeConstraints { make in
+            make.top.equalTo(cameraImage.snp.bottom).offset(16)
+            make.centerX.equalToSuperview()
+            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(32)
+            make.height.equalTo(44)
+        }
+        
+        lineView.snp.makeConstraints { make in
+            make.top.equalTo(textField.snp.bottom).offset(4)
+            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(20)
+        }
+        
+        stateLabel.snp.makeConstraints { make in
+            make.top.equalTo(lineView.snp.bottom).offset(12)
+            make.centerX.equalToSuperview()
+            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(32)
+        }
+        
+        doneButton.snp.makeConstraints { make in
+            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(16)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(stateLabel.snp.bottom).offset(16)
+        }
     }
 }
 
