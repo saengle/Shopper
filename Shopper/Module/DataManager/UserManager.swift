@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
+struct UserManager {
     static var isUser: Bool {
         get { UserDefaults.standard.bool(forKey: "isUser") }
         set { UserDefaults.standard.set(newValue, forKey: "isUser") }
@@ -16,10 +16,10 @@ struct User {
         get { UserDefaults.standard.string(forKey: "userProfile") ?? "" }
         set { UserDefaults.standard.set(newValue, forKey: "userProfile") }
     }
-    static var signInDay: String {
-        get { UserDefaults.standard.string(forKey: "signInDay") ?? "" }
-        set { UserDefaults.standard.set(newValue, forKey: "signInDay") }
-    }
+    
+    @UserDefault(key: "signInDay", defaultValue: nil)
+    static var signInDay: String?
+    
     static var searchedList: [String] {
         get { UserDefaults.standard.stringArray(forKey: "searchedList") ?? [] }
         set { UserDefaults.standard.set(newValue, forKey: "searchedList") }

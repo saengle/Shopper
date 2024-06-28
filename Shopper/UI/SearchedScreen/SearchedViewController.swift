@@ -14,7 +14,11 @@ class SearchedViewController: UIViewController {
     var likeList = [String]()
     var mySort = Sort.sim
     private var myShop: [Shop] = []
-    private var myItems: [Item] = []
+    private var myItems: [Item] = []{
+        didSet {
+            self.searchedView.collectionView.reloadData()
+        }
+    }
     private var myTotal: Int = 0
     private var myPage: Int = 1
     let apiManager = ApiManager()
@@ -25,12 +29,12 @@ class SearchedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = .black
-        navigationItem.title = User.keyWord
+        navigationItem.title = UserManager.keyWord
         searchedView.collectionView.delegate = self
         searchedView.collectionView.dataSource = self
         searchedView.collectionView.prefetchDataSource = self
         searchedView.collectionView.register(SearchedCollectionViewCell.self, forCellWithReuseIdentifier: SearchedCollectionViewCell.identifier)
-        callApi(query: User.keyWord, sort: mySort) { responseBool in
+        callApi(query: UserManager.keyWord, sort: mySort) { responseBool in
             if responseBool {
                 self.searchedView.collectionView.reloadData()
             }
@@ -45,7 +49,7 @@ class SearchedViewController: UIViewController {
 }
 extension SearchedViewController {
     private func callApi(query: String, sort: Sort, completion: @escaping (Bool) -> ()) {
-        apiManager.callShoppingRequest(query: query, sort: "\(sort)", start: myPage) { result in
+        apiManager.callShoppingRequest(query: query, sort: "\(sort)", start: myPage, type: Shop.self) { result in
             switch result{
             case .success(let shop):
 //                guard let shop = shop as? Shop else { return }
@@ -90,7 +94,7 @@ extension SearchedViewController {
 //        self.myShop.removeAll()
         self.myItems.removeAll()
         self.myPage = 1
-        callApi(query: User.keyWord, sort: mySort) { responseBool in
+        callApi(query: UserManager.keyWord, sort: mySort) { responseBool in
             if responseBool {
                 self.searchedView.collectionView.reloadData()
                 if self.myItems.count > 0 && self.myPage <= self.myItems.count {
@@ -123,11 +127,11 @@ extension SearchedViewController {
                 num == id
             }
             likeList.remove(at: deleteIndex!) // 인덱스번째 엘리멘트 제거
-            User.likeList = self.likeList // 유저디폴츠에 적용(삭제).
+            UserManager.likeList = self.likeList // 유저디폴츠에 적용(삭제).
         } else {
-            likeList = User.likeList // 유저디폴츠 라이크리스트 받아오기
+            likeList = UserManager.likeList // 유저디폴츠 라이크리스트 받아오기
             self.likeList.append(id) // 임시 라이크리스트에 id 추가
-            User.likeList = self.likeList // 유저디폴츠 라이크리스트 추가
+            UserManager.likeList = self.likeList // 유저디폴츠 라이크리스트 추가
         }
         self.searchedView.collectionView.reloadData()
     }
@@ -140,7 +144,7 @@ extension SearchedViewController: UICollectionViewDataSourcePrefetching {
             let count = myItems.count
             if count - 4 == item.row && myPage <= myTotal {
                 myPage += 30
-                callApi(query: User.keyWord, sort: mySort) { responseBool in
+                callApi(query: UserManager.keyWord, sort: mySort) { responseBool in
                     if responseBool {
                         self.searchedView.collectionView.reloadData()
                     }
@@ -162,7 +166,7 @@ extension SearchedViewController: UICollectionViewDelegate, UICollectionViewData
             cell.configureCell(data: items, like: false)
             cell.addListButton.tag = indexPath.row
             cell.addListButton.addTarget(self, action: #selector(addListButtonClicked), for: .touchUpInside)
-            for e in User.likeList {
+            for e in UserManager.likeList {
                 if items.productID == e {
                     cell.setAddListButtonImage(like: true)
                 }
@@ -174,11 +178,11 @@ extension SearchedViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let link = myItems[indexPath.row].link else { return }
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        User.link = link
+        UserManager.link = link
         guard let keyWord = myItems[indexPath.row].title else { return }
-        User.detailKeyWord = keyWord
+        UserManager.detailKeyWord = keyWord
         guard let id = myItems[indexPath.row].productID else { return }
-        User.nowId = id
+        UserManager.nowId = id
         let vc = ItemDetailViewController()
         self.navigationController?.pushViewController((vc), animated: true)
     }

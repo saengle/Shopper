@@ -7,14 +7,27 @@
 
 import UIKit
 
-extension UICollectionViewCell {
-    static let identifier = String(describing: UICollectionViewCell.self)
+protocol ReuseIdentifying {
+    static var identifier: String { get }
 }
 
-extension UITableViewCell {
-    static let identifier = String(describing: UITableViewCell.self)
+extension UIViewController: ReuseIdentifying {
+    static var identifier: String {
+        return String(describing: self)
+    }
 }
-
-extension UITableViewHeaderFooterView {
-    static let identifier = String(describing: UITableViewHeaderFooterView.self)
+extension UICollectionViewCell: ReuseIdentifying {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
+extension UITableViewCell: ReuseIdentifying {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
+extension UITableViewHeaderFooterView: ReuseIdentifying {
+    static var identifier: String {
+        return String(describing: self)
+    }
 }

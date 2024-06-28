@@ -12,14 +12,14 @@ import Alamofire
 class ApiManager {
     
     
-    func callShoppingRequest(query: String, sort: String, start: Int, completion: @escaping((Result<Shop, AFError>) -> Void))  {
+    func callShoppingRequest<T: Decodable>(query: String, sort: String, start: Int, type: T.Type = T.self, completion: @escaping((Result<T, AFError>) -> Void))  {
         
         let parameters: Parameters = ["query": query,
                                       "display": "30",
                                       "start": start,
                                       "sort": sort]
         
-        AF.request(SecureAPI.naverShoppingApiUrl, parameters: parameters, headers: SecureAPI.naverApiHeader).responseDecodable(of: Shop.self) { response in
+        AF.request(SecureAPI.naverShoppingApiUrl, parameters: parameters, headers: SecureAPI.naverApiHeader).responseDecodable(of: T.self) { response in
             switch response.result {
             case .success(let repositories):
                 completion(.success(repositories))

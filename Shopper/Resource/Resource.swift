@@ -6,12 +6,7 @@
 //
 
 import UIKit
-enum Sort: String {
-    case sim = "정확도"
-    case date = "날짜순"
-    case asc = "가격낮은순"
-    case dsc = "가격높은순"
-}
+
 
 enum Resource {
     
@@ -54,10 +49,3 @@ enum Resource {
     }
 }
 
-enum settingOptions: String, CaseIterable {
-    case myList = "나의 장바구니 목록"
-    case offenQuestion = "실험실"
-    case qna = "버전정보"
-    case alarm = "알람 설정"
-    case withdraw = "탈퇴하기"
-}

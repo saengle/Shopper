@@ -41,7 +41,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
         cell.textLabel?.text = settingOptions.allCases[indexPath.row].rawValue
-        if indexPath.row == 0 {cell.setLikeList(count: User.likeList.count )}
+        if indexPath.row == 0 {cell.setLikeList(count: UserManager.likeList.count )}
         return cell
     }
     
@@ -63,9 +63,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: SettingHeaderView.identifier) as? SettingHeaderView else {return UITableViewHeaderFooterView()}
         header.WholeButton.addTarget(self, action: #selector(setProfileClicked), for: .touchUpInside)
         header.profileImage.isEnabled = true
-        header.dateLabel.text = "\(User.signInDay) 가입"
-        header.nameLabel.text = User.userName
-        header.profileImage.setImage(UIImage(named: User.userProfile), for: .normal)
+        if let signDate = UserManager.signInDay {
+            header.dateLabel.text = "\(signDate) 가입"
+        }
+        header.nameLabel.text = UserManager.userName
+        header.profileImage.setImage(UIImage(named: UserManager.userProfile), for: .normal)
         return header
     }
 }
@@ -78,7 +80,7 @@ extension SettingViewController {
     }
     // MARK:  유저디폴츠 데이터 전부 삭제
     private func resetDefaults() {
-        User.deleteAllUserData()
+        UserManager.deleteAllUserData()
     }
 }
 

@@ -1,34 +1,12 @@
 //
-//  CustomButton.swift
+//  ProfileImageButton.swift
 //  Shopper
 //
-//  Created by 쌩 on 6/13/24.
+//  Created by 쌩 on 6/28/24.
 //
 
 import UIKit
 
-import SnapKit
-// MARK:  초기 화면들에서 쓰이는 큰 버튼
-class BigButton: UIButton {
-    
-    init(title: String) {
-        super.init(frame: .zero)
-        setTitle(title, for: .normal)
-        setTitleColor(Resource.MyColors.white, for: .normal)
-        titleLabel?.font = Resource.Font.bold16
-        backgroundColor = Resource.MyColors.primary
-        layer.cornerRadius = 24
-        layer.masksToBounds = true
-        
-        self.snp.makeConstraints { make in
-            make.height.equalTo(48)
-        }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
 
 // MARK:  프로필 사진이 들어가있는 이미지 버튼
 class ProfileImageButton: UIButton {
@@ -61,38 +39,22 @@ class ProfileImageButton: UIButton {
             self.layer.borderWidth = 1
         }
     }
- 
-   private func configureLayout(size: Resource.Image.ImageSize) {
+    
+    private func configureLayout(size: Resource.Image.ImageSize) {
         if size == Resource.Image.ImageSize.big {
             self.snp.makeConstraints { make in
                 make.width.height.equalTo(100)
             }
         }
     }
-    open override var isEnabled: Bool{
-           didSet {
-               alpha = isEnabled ? 1.0 : 1.0
-           }
-       }
+    override var isEnabled: Bool{
+        didSet {
+            alpha = isEnabled ? 1.0 : 1.0
+        }
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-class SortButton: UIButton {
-    init(title: String) {
-        super.init(frame: .zero)
-        let myTitle = "   " + title + "   "
-        setTitle(myTitle, for: .normal)
-        layer.cornerRadius = 14
-        layer.masksToBounds = true
-        layer.borderWidth = 1
-        layer.borderColor = Resource.MyColors.lightGray.cgColor
-        titleLabel?.font = Resource.Font.normal13
-        setTitleColor(Resource.MyColors.black, for: .normal)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+

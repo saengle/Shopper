@@ -19,8 +19,8 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Shopper \(User.userName)님!"
-        mySearchedList = User.searchedList
+        self.navigationItem.title = "Shopper \(UserManager.userName)님!"
+        mySearchedList = UserManager.searchedList
         searchView.tableView.delegate = self
         searchView.tableView.dataSource = self
         searchView.tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
@@ -30,7 +30,7 @@ class SearchViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        mySearchedList = User.searchedList
+        mySearchedList = UserManager.searchedList
         self.searchView.searchBar.text = ""
         self.noSearchViewState()
         self.searchView.tableView.reloadData()
@@ -44,14 +44,14 @@ extension SearchViewController {
     
     @objc private func deleteButtonClicked(_ sender: UIButton) {
         mySearchedList.remove(at: sender.tag)
-        User.searchedList = mySearchedList
+        UserManager.searchedList = mySearchedList
         noSearchViewState()
         self.searchView.tableView.reloadData()
     }
     
     @objc private func allDeleteClicked() {
         mySearchedList.removeAll()
-        User.searchedList = mySearchedList
+        UserManager.searchedList = mySearchedList
         noSearchViewState()
         self.searchView.tableView.reloadData()
     }
@@ -61,10 +61,10 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         let vc = SearchedViewController()
-        User.keyWord = searchBar.text!
+        UserManager.keyWord = searchBar.text!
         if mySearchedList.contains(searchBar.text!) == false {
             mySearchedList.insert((searchBar.text!), at: 0)
-            User.searchedList = mySearchedList
+            UserManager.searchedList = mySearchedList
         }
         self.navigationController?.pushViewController((vc), animated: true)
     }
@@ -86,7 +86,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         let vc = SearchedViewController()
-        User.keyWord = mySearchedList[indexPath.row]
+        UserManager.keyWord = mySearchedList[indexPath.row]
         self.navigationController?.pushViewController((vc), animated: true)
     }
 }

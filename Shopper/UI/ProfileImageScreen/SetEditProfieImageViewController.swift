@@ -18,8 +18,8 @@ class SetEditProfieImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myProfile = User.userProfile
-        if User.isUser {
+        myProfile = UserManager.userProfile
+        if UserManager.isUser {
             navigationItem.title = "EDIT PROFILE"
         } else {
             navigationItem.title = "PROFILE SETTING"
@@ -42,7 +42,7 @@ extension SetEditProfieImageViewController: UICollectionViewDelegate, UICollecti
     // MARK:  셀 그리기
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileImageCell.identifier, for: indexPath) as? ProfileImageCell else { return UICollectionViewCell()}
-        if User.userProfile == Resource.Image.ImageList.allCases[0].list[indexPath.row] {
+        if UserManager.userProfile == Resource.Image.ImageList.allCases[0].list[indexPath.row] {
             cell.makeCellImage(size: Resource.Image.ImageSize.selected, style: Resource.Image.ImageList.allCases[0].list[indexPath.row])
         } else {
             cell.makeCellImage(size: Resource.Image.ImageSize.unSelected, style: Resource.Image.ImageList.allCases[0].list[indexPath.row])
@@ -53,7 +53,7 @@ extension SetEditProfieImageViewController: UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileImageCell.identifier, for: indexPath) as? ProfileImageCell {
             myProfile = Resource.Image.ImageList.allCases[0].list[indexPath.row]
-            User.userProfile = Resource.Image.ImageList.allCases[0].list[indexPath.row]
+            UserManager.userProfile = Resource.Image.ImageList.allCases[0].list[indexPath.row]
             setEditView.setMainImage(image: myProfile)
             collectionView.reloadData()
         }

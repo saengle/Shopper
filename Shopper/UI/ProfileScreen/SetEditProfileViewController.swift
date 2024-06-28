@@ -26,8 +26,8 @@ class SetEditProfileViewController: UIViewController {
     }
     // 프로필사진 고르고 돌아올 때 이미지 세팅
     override func viewWillAppear(_ animated: Bool) {
-        if User.userProfile != "" {
-            self.myProfile = User.userProfile
+        if UserManager.userProfile != "" {
+            self.myProfile = UserManager.userProfile
         }
         self.profileView.setMainImage(image: myProfile)
     }
@@ -35,7 +35,7 @@ class SetEditProfileViewController: UIViewController {
 
 extension SetEditProfileViewController {
     private func judgeUser() {
-        if User.isUser {//유저이면 Editting뷰
+        if UserManager.isUser {//유저이면 Editting뷰
             laodEditViewETC()
         } else {//유저가 아니면 Setting 뷰
             loadSetViewETC()
@@ -50,7 +50,7 @@ extension SetEditProfileViewController {
             return item
         }()
         // user이면 이미 갖고있던 닉네임 textfield에 입력
-        self.profileView.textField.text = User.userName
+        self.profileView.textField.text = UserManager.userName
         // textValidation진행
         self.myTextValidation = textValidate(text: self.profileView.textField.text!)
         self.profileView.changeTextValidationLabel(state: myTextValidation.rawValue)
@@ -100,24 +100,24 @@ extension SetEditProfileViewController {
     }
     // MARK:  가입버튼 클릭
     @objc private func doneButtonClicked() {
-        saveProfile(isUser: User.isUser)
+        saveProfile(isUser: UserManager.isUser)
     }
     func saveProfile(isUser: Bool) {
         if isUser {
             if myTextValidation == TextValidation.pass {
-                User.userName = myProfile
-                User.userName = myName
+                UserManager.userName = myProfile
+                UserManager.userName = myName
                 self.navigationController?.popViewController(animated: true)
             }
         } else {
             if myTextValidation == TextValidation.pass {
-                User.isUser = true
-                User.userName = myProfile
-                User.userName = myName
+                UserManager.isUser = true
+                UserManager.userName = myProfile
+                UserManager.userName = myName
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy. MM. dd"
                 let stringDate = formatter.string(from: Date())
-                User.signInDay = stringDate
+                UserManager.signInDay = stringDate
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
                 // 씬 딜리게이트 파일에 접근 ( 씬 딜리게이트 파일 안에 들어가면 윈도우를 찾아 올 수 있음.)
                 let sceneDelegate = windowScene?.delegate as? SceneDelegate
@@ -131,7 +131,7 @@ extension SetEditProfileViewController {
     private func setRandomImage(image: String){
         if image == "" {
             myProfile = Resource.Image.ImageList.allCases[0].list[Int.random(in: 0...Resource.Image.ImageList.allCases[0].list.count - 1)]
-            User.userProfile = myProfile
+            UserManager.userProfile = myProfile
         }
     }
 }
