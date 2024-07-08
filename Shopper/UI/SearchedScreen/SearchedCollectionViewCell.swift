@@ -54,15 +54,15 @@ class SearchedCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureCell(data: Item, like: Bool) {
+    func configureCell(mallName: String?, title: String?, lprice: String?, image: String?, like: Bool) {
         
-        mallNameLabel.text = data.mallName ?? ""
-        guard let tempString: String = data.title else {return}
+        mallNameLabel.text = mallName ?? ""
+        guard let tempString: String = title else {return}
         var mySortValue = tempString.replacingOccurrences(of: "<b>", with: "")
         var filterdString = mySortValue.replacingOccurrences(of: "</b>", with: "")
         titleLabel.text = filterdString
         // MARK:  3자리 끊기
-        if let requestIntValue: Int = Int(data.lprice ?? "0") {
+        if let requestIntValue: Int = Int(lprice ?? "0") {
             let numberFormatter: NumberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
             let result: String = numberFormatter.string(for: requestIntValue)!
@@ -70,7 +70,7 @@ class SearchedCollectionViewCell: UICollectionViewCell {
         }
         
         setAddListButtonImage(like: like)
-        if let imagePath = data.image {
+        if let imagePath = image {
             if let url = URL(string: "\(String(describing: imagePath))") {
                 let processor = DownsamplingImageProcessor(size:  mainImageView.bounds.size)
                 |> RoundCornerImageProcessor(cornerRadius: 5)
@@ -81,7 +81,6 @@ class SearchedCollectionViewCell: UICollectionViewCell {
                               .scaleFactor(UIScreen.main.scale),
                               .transition(.fade(1)),
                               .cacheOriginalImage])
-                
             }
         }
         

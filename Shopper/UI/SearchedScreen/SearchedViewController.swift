@@ -116,7 +116,7 @@ extension SearchedViewController {
             let deleteIndex = likeList.firstIndex { num in
                 num == id
             }
-            RealmManager.shared.deleteLike(id: id) // realm에 라이크 추가
+            RealmManager.shared.deleteLike(id: id) // realm에 라이크 제거
             likeList.remove(at: deleteIndex!) // 인덱스번째 엘리멘트 제거
             UserManager.likeList = self.likeList // 유저디폴츠에 적용(삭제).
         } else {
@@ -161,7 +161,7 @@ extension SearchedViewController: UICollectionViewDelegate, UICollectionViewData
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchedCollectionViewCell.identifier, for: indexPath) as? SearchedCollectionViewCell else { return UICollectionViewCell()}
         if myItems.count >= indexPath.row {
             let items = self.myItems[indexPath.row]
-            cell.configureCell(data: items, like: false)
+            cell.configureCell(mallName: items.mallName, title: items.title, lprice: items.lprice, image: items.image, like: false)
             cell.addListButton.tag = indexPath.row
             cell.addListButton.addTarget(self, action: #selector(addListButtonClicked), for: .touchUpInside)
             for e in UserManager.likeList {
