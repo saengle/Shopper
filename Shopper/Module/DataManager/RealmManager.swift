@@ -30,16 +30,24 @@ final class RealmManager{
         return Array(likes)
     }
     
-    func deleteLike(id: ObjectId, completion: @escaping() -> ()) {
+    func deleteLike(id: String) {
         if let like = realm.object(ofType: RealmModel.self, forPrimaryKey: id) {
             do {
                 try realm.write {
                     realm.delete(like)
-                    completion()
                 }
             } catch {
                 print("data 삭제에 error가 발생하였습니다..")
             }
+        }
+    }
+    func deleteAll() {
+        do {
+            try? realm.write {
+                realm.deleteAll()
+            }
+        } catch {
+            print("data 삭제에 error가 발생하였습니다.")
         }
     }
 }

@@ -84,7 +84,6 @@ extension SearchedViewController {
             print("Sort변환중 문제가 발생했습니다.")
         }
         mySort = tempSort
-//        self.myShop.removeAll()
         self.myItems.removeAll()
         self.myPage = 1
         callApi(query: UserManager.keyWord, sort: mySort) { responseBool in
@@ -93,8 +92,6 @@ extension SearchedViewController {
                 if self.myItems.count > 0 && self.myPage <= self.myItems.count {
                     self.searchedView.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
                 }
-                    
-//                self.searchedView.collectionView.scrollsToTop = true
             }
         }
         configureButton()
@@ -119,9 +116,17 @@ extension SearchedViewController {
             let deleteIndex = likeList.firstIndex { num in
                 num == id
             }
+            RealmManager.shared.deleteLike(id: id) // realm에 라이크 추가
             likeList.remove(at: deleteIndex!) // 인덱스번째 엘리멘트 제거
             UserManager.likeList = self.likeList // 유저디폴츠에 적용(삭제).
         } else {
+            if let myTitle = myItems[sender.tag].title,
+               let myImage = myItems[sender.tag].image,
+               let myLink = myItems[sender.tag].link,
+               let myLprice = myItems[sender.tag].lprice,
+               let myMallName = myItems[sender.tag].mallName {
+                RealmManager.shared.createLike(data: RealmModel(id: id,title: myTitle, link: myLink, lprice: myLprice, mallName: myMallName, imagePath: myImage))
+            }
             likeList = UserManager.likeList // 유저디폴츠 라이크리스트 받아오기
             self.likeList.append(id) // 임시 라이크리스트에 id 추가
             UserManager.likeList = self.likeList // 유저디폴츠 라이크리스트 추가

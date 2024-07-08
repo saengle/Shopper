@@ -15,8 +15,9 @@ class RealmModel: Object {
     @Persisted var mallName: String
     @Persisted var imagePath: String
     
-    convenience init(title: String ,link: String, lprice: String, mallName: String, imagePath: String) {
+    convenience init(id: String, title: String ,link: String, lprice: String, mallName: String, imagePath: String) {
         self.init()
+        self.id = id
         self.title = title
         self.link = link
         self.lprice = lprice

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LikeViewController: UIViewController {
     
@@ -14,7 +15,6 @@ class LikeViewController: UIViewController {
     var searchWord = ""
     var likeList = [String]()
     
-    private var myShop: [Shop] = []
     private var myItems: [Item] = []{
         didSet {
             self.likeView.collectionView.reloadData()
@@ -33,7 +33,7 @@ class LikeViewController: UIViewController {
         navigationItem.title = "장바구니"
         likeView.collectionView.delegate = self
         likeView.collectionView.dataSource = self
-       
+        let realm = try! Realm()
         likeView.collectionView.register(SearchedCollectionViewCell.self, forCellWithReuseIdentifier: SearchedCollectionViewCell.identifier)
     }
     override func viewWillAppear(_ animated: Bool) {

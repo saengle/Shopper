@@ -53,6 +53,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         else if settingOptions.allCases[indexPath.row] == settingOptions.withdraw {
             showAlert(title: "탈퇴하기", messeage: "탈퇴를 하면 데이터가 모두 초기화됩니다. 탈퇴하시겠습니까?") { UIAlertAction in
                 self.resetDefaults()
+                RealmManager.shared.deleteAll()
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
                 let sceneDelegate = windowScene?.delegate as? SceneDelegate
                 let vc = OnBoardViewController()
