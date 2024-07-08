@@ -7,11 +7,14 @@
 
 import Foundation
 
-class realmManager{
+import RealmSwift
+
+final class RealmManager{
     
+    static let shared = RealmManager()
     private let realm = try! Realm()
     
-    func createReminder(data: Reminder) {
+    func createLike(data: RealmModel) {
         let data = data
         do {
             try realm.write({
@@ -22,35 +25,16 @@ class realmManager{
         }
     }
     
-    func readFilterdReminders(filter: FilteringType) -> [Reminder] {
-        let value = realm.objects(Reminder.self)
-        var result: Results<Reminder>
-        switch filter {
-        case .all:
-            result = value
-        case .today:
-            result = value.where({
-                $0.deadLine <= Date()
-            })
-        case .scheduled:
-            result = value
-        case .flagged:
-            result = value.where {
-                $0.flag == true
-            }
-        case .completed:
-            result = value.where {
-                $0.isDone == true
-            }
-        }
-        return Array(result)
+    func readLikes() -> [RealmModel] {
+        let likes = realm.objects(RealmModel.self)
+        return Array(likes)
     }
     
-    func deleteReminder(id: ObjectId, completion: @escaping() -> ()) {
-        if let reminder = realm.object(ofType: Reminder.self, forPrimaryKey: id) {
+    func deleteLike(id: ObjectId, completion: @escaping() -> ()) {
+        if let like = realm.object(ofType: RealmModel.self, forPrimaryKey: id) {
             do {
                 try realm.write {
-                    realm.delete(reminder)
+                    realm.delete(like)
                     completion()
                 }
             } catch {

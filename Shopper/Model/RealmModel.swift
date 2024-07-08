@@ -7,8 +7,8 @@
 
 import RealmSwift
 
-class Reminder: Object {
-    @Persisted(primaryKey: true) var id: ObjectId
+class RealmModel: Object {
+    @Persisted(primaryKey: true) var id: String
     @Persisted(indexed: true) var title: String
     @Persisted var link: String
     @Persisted var lprice: String
