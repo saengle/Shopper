@@ -11,6 +11,11 @@
 		8E31118B2C2E818700E1BB80 /* SortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31118A2C2E818700E1BB80 /* SortButton.swift */; };
 		8E3111912C2E90E000E1BB80 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3111902C2E90E000E1BB80 /* Sort.swift */; };
 		8E3111932C2E910C00E1BB80 /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3111922C2E910C00E1BB80 /* SettingOptions.swift */; };
+		8E3112382C3C751F00E1BB80 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3112372C3C751F00E1BB80 /* LikeViewController.swift */; };
+		8E31123A2C3C773300E1BB80 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3112392C3C773300E1BB80 /* LikeView.swift */; };
+		8E31123C2C3C819B00E1BB80 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31123B2C3C819B00E1BB80 /* RealmManager.swift */; };
+		8E31123E2C3C821300E1BB80 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31123D2C3C821300E1BB80 /* RealmModel.swift */; };
+		8E3112412C3C82C700E1BB80 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8E3112402C3C82C700E1BB80 /* RealmSwift */; };
 		8E86E23D2C1AF1EE009FE3AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E23C2C1AF1EE009FE3AB /* AppDelegate.swift */; };
 		8E86E23F2C1AF1EE009FE3AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E23E2C1AF1EE009FE3AB /* SceneDelegate.swift */; };
 		8E86E2412C1AF1EE009FE3AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2402C1AF1EE009FE3AB /* ViewController.swift */; };
@@ -59,6 +64,10 @@
 		8E31118A2C2E818700E1BB80 /* SortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortButton.swift; sourceTree = "<group>"; };
 		8E3111902C2E90E000E1BB80 /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		8E3111922C2E910C00E1BB80 /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
+		8E3112372C3C751F00E1BB80 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		8E3112392C3C773300E1BB80 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
+		8E31123B2C3C819B00E1BB80 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		8E31123D2C3C821300E1BB80 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		8E86E2392C1AF1EE009FE3AB /* Shopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E86E23C2C1AF1EE009FE3AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E86E23E2C1AF1EE009FE3AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3112412C3C82C700E1BB80 /* RealmSwift in Frameworks */,
 				8E86E2692C1B0FCC009FE3AB /* IQKeyboardManagerSwift in Frameworks */,
 				8E86E2662C1B0FB9009FE3AB /* Toast in Frameworks */,
 				8E86E2632C1B0FAD009FE3AB /* SnapKit in Frameworks */,
@@ -136,8 +146,18 @@
 			children = (
 				8EA107AF2C1EFB6C00CAC8FB /* ApiManager.swift */,
 				8EF74DBB2C20350400BB0233 /* UserManager.swift */,
+				8E31123B2C3C819B00E1BB80 /* RealmManager.swift */,
 			);
 			path = DataManager;
+			sourceTree = "<group>";
+		};
+		8E3112362C3C74FB00E1BB80 /* LikeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8E3112372C3C751F00E1BB80 /* LikeViewController.swift */,
+				8E3112392C3C773300E1BB80 /* LikeView.swift */,
+			);
+			path = LikeScreen;
 			sourceTree = "<group>";
 		};
 		8E86E2302C1AF1EE009FE3AB = {
@@ -191,6 +211,7 @@
 		8E86E2552C1B0EF5009FE3AB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8E3112362C3C74FB00E1BB80 /* LikeScreen */,
 				8E3111872C2E813400E1BB80 /* Components */,
 				8EF74DC02C2038B100BB0233 /* SettingScreen */,
 				8EF74DBD2C2037D700BB0233 /* TabBar */,
@@ -265,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				8EA107B32C1F03D700CAC8FB /* Shop.swift */,
+				8E31123D2C3C821300E1BB80 /* RealmModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +359,7 @@
 				8E86E2652C1B0FB9009FE3AB /* Toast */,
 				8E86E2682C1B0FCC009FE3AB /* IQKeyboardManagerSwift */,
 				8EF74DD32C2194B900BB0233 /* Kingfisher */,
+				8E3112402C3C82C700E1BB80 /* RealmSwift */,
 			);
 			productName = Shopper;
 			productReference = 8E86E2392C1AF1EE009FE3AB /* Shopper.app */;
@@ -372,6 +395,7 @@
 				8E86E2642C1B0FB9009FE3AB /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				8E86E2672C1B0FCC009FE3AB /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				8EF74DD22C2194B900BB0233 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8E31123F2C3C82C700E1BB80 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 8E86E23A2C1AF1EE009FE3AB /* Products */;
 			projectDirPath = "";
@@ -403,6 +427,8 @@
 				8E31118B2C2E818700E1BB80 /* SortButton.swift in Sources */,
 				8EF74DC22C2038BB00BB0233 /* SettingViewController.swift in Sources */,
 				8EF74DB72C2025D500BB0233 /* ItemDetailViewController.swift in Sources */,
+				8E31123A2C3C773300E1BB80 /* LikeView.swift in Sources */,
+				8E3112382C3C751F00E1BB80 /* LikeViewController.swift in Sources */,
 				8E86E2412C1AF1EE009FE3AB /* ViewController.swift in Sources */,
 				8E86E2582C1B0F18009FE3AB /* OnBoardView.swift in Sources */,
 				8E86E2742C1B3214009FE3AB /* SetEditProfileView.swift in Sources */,
@@ -415,6 +441,7 @@
 				8EA107A42C1C265E00CAC8FB /* ProfileImageCell.swift in Sources */,
 				8EDE510F2C29AD7D008CCB43 /* UIViewController+Extension.swift in Sources */,
 				8EF74DB92C20262000BB0233 /* ItemDetailView.swift in Sources */,
+				8E31123C2C3C819B00E1BB80 /* RealmManager.swift in Sources */,
 				8EA107AC2C1DD97C00CAC8FB /* SearchView.swift in Sources */,
 				8EF74DCC2C20FAAF00BB0233 /* SettingHeaderView.swift in Sources */,
 				8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */,
@@ -425,6 +452,7 @@
 				8EA107AA2C1DD96500CAC8FB /* SearchViewController.swift in Sources */,
 				8E86E2702C1B31F5009FE3AB /* SetEditProfileViewController.swift in Sources */,
 				8EF74DC42C2038D800BB0233 /* SettingView.swift in Sources */,
+				8E31123E2C3C821300E1BB80 /* RealmModel.swift in Sources */,
 				8E86E2792C1B64ED009FE3AB /* SetEditProfieImageViewController.swift in Sources */,
 				8EA107BD2C1F37C300CAC8FB /* SearchedCollectionViewCell.swift in Sources */,
 				8E86E25A2C1B0F22009FE3AB /* OnBoardViewController.swift in Sources */,
@@ -663,6 +691,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8E31123F2C3C82C700E1BB80 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 10.50.0;
+			};
+		};
 		8E86E25E2C1B0FA0009FE3AB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -706,6 +742,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8E3112402C3C82C700E1BB80 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E31123F2C3C82C700E1BB80 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		8E86E25F2C1B0FA0009FE3AB /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8E86E25E2C1B0FA0009FE3AB /* XCRemoteSwiftPackageReference "Alamofire" */;

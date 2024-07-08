@@ -46,7 +46,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if settingOptions.allCases[indexPath.row] == settingOptions.withdraw {
+        if settingOptions.allCases[indexPath.row] == settingOptions.myList {
+            let vc = LikeViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        else if settingOptions.allCases[indexPath.row] == settingOptions.withdraw {
             showAlert(title: "탈퇴하기", messeage: "탈퇴를 하면 데이터가 모두 초기화됩니다. 탈퇴하시겠습니까?") { UIAlertAction in
                 self.resetDefaults()
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene

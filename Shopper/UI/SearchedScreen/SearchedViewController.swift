@@ -49,25 +49,6 @@ class SearchedViewController: UIViewController {
 }
 extension SearchedViewController {
     private func callApi(query: String, sort: Sort, completion: @escaping (Bool) -> ()) {
-//        apiManager.callShoppingRequest(query: query, sort: "\(sort)", start: myPage, type: Shop.self) { result in
-//            switch result{
-//            case .success(let shop):
-////                guard let shop = shop as? Shop else { return }
-//                self.myShop.append(contentsOf: [shop])
-//                guard let newItems = shop.items else { return }
-//                self.myItems.append(contentsOf: newItems)
-//                self.myTotal = self.myShop.first?.total ?? 0
-//                // MARK:  3자리 끊기
-//                let numberFormatter: NumberFormatter = NumberFormatter()
-//                numberFormatter.numberStyle = .decimal
-//                let result: String = numberFormatter.string(for: self.myTotal)!
-//                self.searchedView.setTotalLabel(total: result)
-//                completion(true)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//                completion(false)
-//            }
-//        }
         apiManager.callRequest(query: query, sort: "\(sort)", start: myPage, type: Shop.self) { shop, error in
             guard let myShops = shop else { return }
             self.myShop.append(contentsOf: [myShops])
