@@ -34,6 +34,8 @@
 		8E86E2742C1B3214009FE3AB /* SetEditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */; };
 		8E86E2792C1B64ED009FE3AB /* SetEditProfieImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E2782C1B64ED009FE3AB /* SetEditProfieImageViewController.swift */; };
 		8E86E27B2C1B6547009FE3AB /* SetEditProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E86E27A2C1B6547009FE3AB /* SetEditProfileImageView.swift */; };
+		8E8D5D9C2C3D9A3800CEBD92 /* SetEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5D9B2C3D9A3800CEBD92 /* SetEditViewModel.swift */; };
+		8E8D5D9E2C3D9AFC00CEBD92 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8D5D9D2C3D9AFC00CEBD92 /* Observable.swift */; };
 		8EA107A42C1C265E00CAC8FB /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107A32C1C265E00CAC8FB /* ProfileImageCell.swift */; };
 		8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107A62C1C294100CAC8FB /* Identifier+Extension.swift */; };
 		8EA107AA2C1DD96500CAC8FB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA107A92C1DD96500CAC8FB /* SearchViewController.swift */; };
@@ -84,6 +86,8 @@
 		8E86E2732C1B3214009FE3AB /* SetEditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfileView.swift; sourceTree = "<group>"; };
 		8E86E2782C1B64ED009FE3AB /* SetEditProfieImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfieImageViewController.swift; sourceTree = "<group>"; };
 		8E86E27A2C1B6547009FE3AB /* SetEditProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditProfileImageView.swift; sourceTree = "<group>"; };
+		8E8D5D9B2C3D9A3800CEBD92 /* SetEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEditViewModel.swift; sourceTree = "<group>"; };
+		8E8D5D9D2C3D9AFC00CEBD92 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		8EA107A32C1C265E00CAC8FB /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		8EA107A62C1C294100CAC8FB /* Identifier+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Identifier+Extension.swift"; sourceTree = "<group>"; };
 		8EA107A92C1DD96500CAC8FB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				8E86E2452C1AF1F0009FE3AB /* Assets.xcassets */,
 				8E86E2472C1AF1F0009FE3AB /* LaunchScreen.storyboard */,
 				8E86E24A2C1AF1F0009FE3AB /* Info.plist */,
+				8E8D5D9D2C3D9AFC00CEBD92 /* Observable.swift */,
 			);
 			path = Shopper;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				8E86E2782C1B64ED009FE3AB /* SetEditProfieImageViewController.swift */,
 				8E86E27A2C1B6547009FE3AB /* SetEditProfileImageView.swift */,
 				8EA107A32C1C265E00CAC8FB /* ProfileImageCell.swift */,
+				8E8D5D9B2C3D9A3800CEBD92 /* SetEditViewModel.swift */,
 			);
 			path = ProfileImageScreen;
 			sourceTree = "<group>";
@@ -444,6 +450,7 @@
 				8E31123C2C3C819B00E1BB80 /* RealmManager.swift in Sources */,
 				8EA107AC2C1DD97C00CAC8FB /* SearchView.swift in Sources */,
 				8EF74DCC2C20FAAF00BB0233 /* SettingHeaderView.swift in Sources */,
+				8E8D5D9E2C3D9AFC00CEBD92 /* Observable.swift in Sources */,
 				8EA107A72C1C294100CAC8FB /* Identifier+Extension.swift in Sources */,
 				8E86E23D2C1AF1EE009FE3AB /* AppDelegate.swift in Sources */,
 				8EA107B02C1EFB6C00CAC8FB /* ApiManager.swift in Sources */,
@@ -463,6 +470,7 @@
 				8EA107BB2C1F37B700CAC8FB /* SearchedView.swift in Sources */,
 				8E3111932C2E910C00E1BB80 /* SettingOptions.swift in Sources */,
 				8E3111892C2E816D00E1BB80 /* ProfileImageButton.swift in Sources */,
+				8E8D5D9C2C3D9A3800CEBD92 /* SetEditViewModel.swift in Sources */,
 				8EF74DBF2C2037EB00BB0233 /* TabBarController.swift in Sources */,
 				8E86E23F2C1AF1EE009FE3AB /* SceneDelegate.swift in Sources */,
 			);

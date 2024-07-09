@@ -94,7 +94,7 @@ extension SetEditProfileViewController {
     
     @objc private func imageButtonClicked() {
         let vc = SetEditProfieImageViewController()
-        vc.myProfile = self.myProfile
+        vc.vm.outputProfile.value = self.myProfile
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         navigationController?.pushViewController(SetEditProfieImageViewController(), animated: true)
     }
