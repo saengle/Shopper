@@ -69,16 +69,16 @@ extension SearchedView {
             make.top.equalTo(safeAreaLayoutGuide)
             make.leading.trailing.equalToSuperview()
         }
-        totalLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).inset(8)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(24)
+        totalLabel.snp.makeConstraints { lb in
+            lb.top.equalTo(safeAreaLayoutGuide).inset(8)
+            lb.leading.trailing.equalToSuperview().inset(16)
+            lb.height.equalTo(24)
         }
         
-        simButton.snp.makeConstraints { make in
-            make.top.equalTo(totalLabel.snp.bottom).offset(8)
-            make.leading.equalToSuperview().inset(16)
-            make.height.equalTo(28)
+        simButton.snp.makeConstraints { btn in
+            btn.top.equalTo(totalLabel.snp.bottom).offset(8)
+            btn.leading.equalToSuperview().inset(16)
+            btn.height.equalTo(28)
         }
         dateButton.snp.makeConstraints { make in
             make.top.equalTo(simButton.snp.top)

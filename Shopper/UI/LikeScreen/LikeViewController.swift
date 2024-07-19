@@ -45,7 +45,7 @@ extension LikeViewController {
         let id = myItems[sender.tag].id
         // 라이크리스트가 id를 갖고있으면 (삭제)
         //인덱스 찾기
-         let deleteIndex = likeList.firstIndex { num in
+        let deleteIndex = likeList.firstIndex { num in
             num == id
         }
         RealmManager.shared.deleteLike(id: id) // realm에 라이크 제거
@@ -63,15 +63,13 @@ extension LikeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchedCollectionViewCell.identifier, for: indexPath) as? SearchedCollectionViewCell else { return UICollectionViewCell()}
-        if myItems.count >= indexPath.row {
-            let items = self.myItems[indexPath.row]
-            cell.configureCell(mallName: items.mallName, title: items.title, lprice: items.lprice, image: items.imagePath, like: true)
-            cell.addListButton.tag = indexPath.row
-            cell.addListButton.addTarget(self, action: #selector(deleteLikeButtonClicked), for: .touchUpInside)
-            for e in UserManager.likeList {
-                if items.id == e {
-                    cell.setAddListButtonImage(like: true)
-                }
+        let items = self.myItems[indexPath.row]
+        cell.configureCell(mallName: items.mallName, title: items.title, lprice: items.lprice, image: items.imagePath, like: true)
+        cell.addListButton.tag = indexPath.row
+        cell.addListButton.addTarget(self, action: #selector(deleteLikeButtonClicked), for: .touchUpInside)
+        for e in UserManager.likeList {
+            if items.id == e {
+                cell.setAddListButtonImage(like: true)
             }
         }
         return cell
