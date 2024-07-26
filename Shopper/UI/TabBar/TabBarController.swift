@@ -23,7 +23,7 @@ class TabbarController: UITabBarController {
         let nav2 = UINavigationController(rootViewController: setting)
         nav2.tabBarItem = UITabBarItem(title: "설정", image: UIImage(systemName: "person"), tag: 1)
         
-        setViewControllers([nav1, nav2], animated: true)
+        setViewControllers([nav1, nav2], animated: true) 
     }
 }
 
